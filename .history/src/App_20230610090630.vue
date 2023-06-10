@@ -1,6 +1,5 @@
 <template>
- <!-- 一级路由 -->
- <RouterView />
+ <!-- 一级  -->
 </template>
 
 <script>

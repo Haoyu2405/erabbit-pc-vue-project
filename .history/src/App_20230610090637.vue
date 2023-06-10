@@ -1,6 +1,6 @@
 <template>
  <!-- 一级路由 -->
- <RouterView />
+ <RouterV
 </template>
 
 <script>

@@ -1,12 +1,13 @@
 <template>
- <!-- 一级路由 -->
- <RouterView />
+ <!-- 顶部通栏 -->
+ 
 </template>
 
 <script>
 export default {
+  name: 'Layout',
 }
 
 </script>
-<style scoped>
+<style scoped lang='less'>
 </style>

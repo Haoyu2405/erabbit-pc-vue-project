@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 // route lazy loading
 /**
+ * 
  *  The import() function dynamically loads the module or file specified by the path '@/views/Layout'.
  *  This means that the code for the Layout component will be fetched and loaded only when it is needed,
  *  following the concept of lazy loading mentioned earlier.

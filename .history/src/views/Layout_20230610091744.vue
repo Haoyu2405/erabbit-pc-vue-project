@@ -1,12 +1,14 @@
 <template>
- <!-- 一级路由 -->
- <RouterView />
+  <div>
+
+  </div>
 </template>
 
 <script>
 export default {
+  name: 'Layou',
 }
 
 </script>
-<style scoped>
+<style scoped lang='less'>
 </style>
