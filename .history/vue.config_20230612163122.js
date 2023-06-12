@@ -10,7 +10,6 @@ module.exports = defineConfig({
         // 'C:\\Users\\hy\\Desktop\\erabbit-pc-vue-project\\src\\assets\\styles\\variables.less',
         // 'C:\\Users\\hy\\Desktop\\erabbit-pc-vue-project\\src\\assets\\styles\\mixins.less'
         path.join(__dirname, './src/assets/styles/variables.less'),
-        path.join(__dirname, './src/assets/styles/mixins.less')
       ]
     }
   }

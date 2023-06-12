@@ -12,6 +12,5 @@ export default {
 
 .container {
   .hoverShadow();
-  color:@xtxColor;
 }
 </style>

@@ -9,9 +9,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+@import '../../assets/styles/mixins';
 
 .container {
   .hoverShadow();
-  color:@xtxColor;
 }
 </style>
