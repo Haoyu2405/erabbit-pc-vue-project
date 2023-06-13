@@ -2,8 +2,7 @@
   <header class="app-header">
     <div class="container">
       <h1 class="logo"><RouterLink to="/">小兔鲜</RouterLink></h1>
-      <!-- 使用头部导航组件 -->
-      <AppHeaderNav />
+     <!-- 使用头部导航组件 -->
       <div class="search">
         <i class="iconfont icon-search"></i>
         <input type="text" placeholder="搜一搜" />
@@ -18,12 +17,8 @@
 </template>
 
 <script>
-import AppHeaderNav from './app-header-nav'
 export default {
-  name: 'AppHeader',
-  components: {
-    AppHeaderNav
-  }
+  name: 'AppHeader'
 }
 </script>
 
@@ -44,7 +39,29 @@ export default {
       background: url(../assets/images/logo.png) no-repeat center 18px / contain;
     }
   }
-
+  .navs {
+    width: 820px;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 40px;
+    li {
+      margin-right: 40px;
+      width: 38px;
+      text-align: center;
+      a {
+        font-size: 16px;
+        line-height: 32px;
+        height: 32px;
+        display: inline-block;
+      }
+      &:hover {
+        a {
+          color: @xtxColor;
+          border-bottom: 1px solid @xtxColor;
+        }
+      }
+    }
+  }
   .search {
     width: 170px;
     height: 32px;

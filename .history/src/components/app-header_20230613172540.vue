@@ -2,8 +2,7 @@
   <header class="app-header">
     <div class="container">
       <h1 class="logo"><RouterLink to="/">小兔鲜</RouterLink></h1>
-      <!-- 使用头部导航组件 -->
-      <AppHeaderNav />
+     <!-- 使用头部导航组件 -->
       <div class="search">
         <i class="iconfont icon-search"></i>
         <input type="text" placeholder="搜一搜" />
@@ -18,12 +17,9 @@
 </template>
 
 <script>
-import AppHeaderNav from './app-header-nav'
+import AppHeaderNav from './app-'
 export default {
-  name: 'AppHeader',
-  components: {
-    AppHeaderNav
-  }
+  name: 'AppHeader'
 }
 </script>
 
