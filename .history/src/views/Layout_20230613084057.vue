@@ -1,8 +1,9 @@
 <template>
   <!-- 顶部通栏 -->
-  <AppNavBar />
+<AppNavBar />
   <!-- 头部组件 -->
-  <AppHeader />
+ <AppHeader
+ />
   <!-- 内容容器 -->
   <div class="main">
     <!-- 二级路由 -->

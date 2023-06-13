@@ -1,8 +1,8 @@
 <template>
   <!-- 顶部通栏 -->
-  <AppNavBar />
+  <nav>顶部通栏</nav>
   <!-- 头部组件 -->
-  <AppHeader />
+  <header>头部组件</header>
   <!-- 内容容器 -->
   <div class="main">
     <!-- 二级路由 -->
@@ -13,12 +13,10 @@
 </template>
 <script>
 import AppNavBar from '@/components/app-navbar'
-import AppHeader from '@/components/app-header'
 export default {
   name: 'LayOut',
-  components: {
-    AppNavBar,
-    AppHeader
+  components:{
+    
   }
 }
 </script>
