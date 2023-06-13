@@ -4,7 +4,7 @@
   <!-- 头部组件 -->
   <AppHeader />
   <!-- 内容容器 -->
-  <div class="app-body">
+  <div class="main">
     <!-- 二级路由 -->
     <RouterView />
   </div>
@@ -25,7 +25,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.app-body {
-  min-height: 600px;
+.app-body{
+  min-
 }
 </style>

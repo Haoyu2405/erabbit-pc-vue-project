@@ -4,12 +4,12 @@
   <!-- 头部组件 -->
   <AppHeader />
   <!-- 内容容器 -->
-  <div class="app-body">
+  <div class="main">
     <!-- 二级路由 -->
     <RouterView />
   </div>
   <!-- 底部组件 -->
-  <AppFooter />
+  <App
 </template>
 <script>
 import AppNavBar from '@/components/app-navbar'
@@ -24,8 +24,4 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
-.app-body {
-  min-height: 600px;
-}
-</style>
+<style scoped lang="less"></style>
