@@ -13,14 +13,13 @@
 
 <script>
 // import { onMounted, ref } from 'vue'
-import { useWindowScroll } from '@vueuse/core'
+import { useWindowScroll } from '@/vueuse/core'
 import AppHeaderNav from './app-header-nav'
 export default {
   name: 'AppHeaderSticky',
-  components: { AppHeaderNav },
-  setup () {
-    const { y } = useWindowScroll()
-    return { y }
+  components: { AppHeaderNav }
+  setup(){
+    
   }
   // setup () {
   //   // 记录y轴的高度
