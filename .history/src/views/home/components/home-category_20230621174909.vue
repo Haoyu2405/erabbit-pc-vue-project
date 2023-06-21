@@ -18,17 +18,20 @@
         </template>
       </li>
     </ul>
-    <!-- 弹层 @mouseenter传id-->
+    <!-- 弹层 -->
     <div class="layer">
       <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
       <ul v-if="currCategory && currCategory.goods">
         <li v-for="item in currCategory.goods" :key="item.id">
           <RouterLink to="/">
-            <img :src="item.picture" alt="" />
+            <img
+              :src="item.picture"
+              alt=""
+            />
             <div class="info">
               <p class="name ellipsis-2">{{ item.name }}</p>
-              <p class="desc ellipsis">{{ item.desc }}</p>
-              <p class="price"><i>¥</i>{{ item.price }}</p>
+              <p class="desc ellipsis">{{item.de}}</p>
+              <p class="price"><i>¥</i>100.00</p>
             </div>
           </RouterLink>
         </li>
@@ -69,7 +72,7 @@ export default {
       return list
     })
 
-    // 通过id找到当前商品
+    // 得到弹层的商品数据
     const categoryId = ref(null)
     const currCategory = computed(() => {
       return menuList.value.find(item => item.id === categoryId.value)

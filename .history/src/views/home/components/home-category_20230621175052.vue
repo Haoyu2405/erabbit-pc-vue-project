@@ -18,7 +18,7 @@
         </template>
       </li>
     </ul>
-    <!-- 弹层 @mouseenter传id-->
+    <!-- 弹层 传id-->
     <div class="layer">
       <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
       <ul v-if="currCategory && currCategory.goods">
@@ -69,7 +69,7 @@ export default {
       return list
     })
 
-    // 通过id找到当前商品
+    // 得到弹层的商品数据
     const categoryId = ref(null)
     const currCategory = computed(() => {
       return menuList.value.find(item => item.id === categoryId.value)

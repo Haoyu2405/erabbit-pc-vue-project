@@ -1,11 +1,7 @@
 <template>
   <div class="home-category">
     <ul class="menu">
-      <li
-        v-for="item in menuList"
-        :key="item.id"
-        @mouseenter="categoryId = item.id"
-      >
+      <li v-for="item in menuList" :key="item.id">
         <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         <template v-if="item.children">
           <RouterLink
@@ -18,27 +14,12 @@
         </template>
       </li>
     </ul>
-    <!-- 弹层 @mouseenter传id-->
-    <div class="layer">
-      <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
-      <ul v-if="currCategory && currCategory.goods">
-        <li v-for="item in currCategory.goods" :key="item.id">
-          <RouterLink to="/">
-            <img :src="item.picture" alt="" />
-            <div class="info">
-              <p class="name ellipsis-2">{{ item.name }}</p>
-              <p class="desc ellipsis">{{ item.desc }}</p>
-              <p class="price"><i>¥</i>{{ item.price }}</p>
-            </div>
-          </RouterLink>
-        </li>
-      </ul>
-    </div>
   </div>
+ 
 </template>
 
 <script>
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive } from 'vue'
 import { useStore } from 'vuex'
 export default {
   name: 'HomeCategory',
@@ -68,14 +49,7 @@ export default {
       list.push(brand)
       return list
     })
-
-    // 通过id找到当前商品
-    const categoryId = ref(null)
-    const currCategory = computed(() => {
-      return menuList.value.find(item => item.id === categoryId.value)
-    })
-
-    return { menuList, categoryId, currCategory }
+    return { menuList }
   }
 }
 </script>

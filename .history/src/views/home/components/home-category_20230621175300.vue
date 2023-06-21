@@ -70,6 +70,7 @@ export default {
     })
 
     // 通过id找到当前商品
+
     const categoryId = ref(null)
     const currCategory = computed(() => {
       return menuList.value.find(item => item.id === categoryId.value)
