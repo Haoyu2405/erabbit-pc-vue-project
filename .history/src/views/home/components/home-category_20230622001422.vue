@@ -1,8 +1,7 @@
 <template>
-  <div class="home-category" @mouseleave="categoryId = null">
+  <div class="home-category">
     <ul class="menu">
       <li
-        :class="{ active: item.id === categoryId }"
         v-for="item in menuList"
         :key="item.id"
         @mouseenter="categoryId = item.id"
@@ -21,10 +20,7 @@
     </ul>
     <!-- 弹层 @mouseenter传id-->
     <div class="layer">
-      <h4>
-        {{ currCategory && currCategory.id === 'brand' ? '品牌' : '分类' }}推荐
-        <small>根据您的购买或浏览记录推荐</small>
-      </h4>
+      <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
       <!-- 商品 -->
       <ul v-if="currCategory && currCategory.goods">
         <li v-for="item in currCategory.goods" :key="item.id">
@@ -42,13 +38,14 @@
       <ul v-if="currCategory && currCategory.brands">
         <li class="brand" v-for="brand in currCategory.brands" :key="brand.id">
           <RouterLink to="/">
-            <img :src="brand.picture" alt="" />
+            <img
+              :src="brand.picture"
+              alt=""
+            />
             <div class="info">
-              <p class="place">
-                <i class="iconfont icon-dingwei"></i>{{ brand.place }}
-              </p>
-              <p class="name ellipsis">{{ brand.name }}</p>
-              <p class="desc ellipsis-2">{{ brand.desc }}</p>
+              <p class="place"><i class="iconfont icon-dingwei"></i>{{brand.place}}</p>
+              <p class="name ellipsis">{{bran}}</p>
+              <p class="desc ellipsis-2">DW品牌闪购</p>
             </div>
           </RouterLink>
         </li>
@@ -60,7 +57,7 @@
 <script>
 import { computed, reactive, ref } from 'vue'
 import { useStore } from 'vuex'
-import { findBrand } from '@/api/home'
+import { findBrand } from '@api/home'
 export default {
   name: 'HomeCategory',
   setup () {
@@ -120,8 +117,7 @@ export default {
       padding-left: 40px;
       height: 50px;
       line-height: 50px;
-      &:hover,
-      &.active {
+      &:hover {
         background: @xtxColor;
       }
       a {
@@ -133,7 +129,6 @@ export default {
       }
     }
   }
-  // 弹出层样式
   .layer {
     width: 990px;
     height: 500px;

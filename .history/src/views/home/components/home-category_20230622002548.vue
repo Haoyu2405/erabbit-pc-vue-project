@@ -1,8 +1,7 @@
 <template>
-  <div class="home-category" @mouseleave="categoryId = null">
+  <div class="home-category">
     <ul class="menu">
       <li
-        :class="{ active: item.id === categoryId }"
         v-for="item in menuList"
         :key="item.id"
         @mouseenter="categoryId = item.id"
@@ -21,8 +20,7 @@
     </ul>
     <!-- 弹层 @mouseenter传id-->
     <div class="layer">
-      <h4>
-        {{ currCategory && currCategory.id === 'brand' ? '品牌' : '分类' }}推荐
+      <h4>{{currCategory&&currCategory.id==='brand'? '品牌':'分类'}}推荐
         <small>根据您的购买或浏览记录推荐</small>
       </h4>
       <!-- 商品 -->
@@ -120,8 +118,7 @@ export default {
       padding-left: 40px;
       height: 50px;
       line-height: 50px;
-      &:hover,
-      &.active {
+      &:hover {
         background: @xtxColor;
       }
       a {
@@ -133,7 +130,6 @@ export default {
       }
     }
   }
-  // 弹出层样式
   .layer {
     width: 990px;
     height: 500px;

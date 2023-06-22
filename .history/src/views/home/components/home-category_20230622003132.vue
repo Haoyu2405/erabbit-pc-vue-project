@@ -1,8 +1,7 @@
 <template>
-  <div class="home-category" @mouseleave="categoryId = null">
+  <div class="home-category">
     <ul class="menu">
       <li
-        :class="{ active: item.id === categoryId }"
         v-for="item in menuList"
         :key="item.id"
         @mouseenter="categoryId = item.id"
@@ -120,8 +119,7 @@ export default {
       padding-left: 40px;
       height: 50px;
       line-height: 50px;
-      &:hover,
-      &.active {
+      &:hover,&. {
         background: @xtxColor;
       }
       a {
