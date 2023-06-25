@@ -8,8 +8,7 @@
       <HomeBanner />
     </div>
   </div>
-  <!-- 新鲜好物 -->
-  <!-- 人气推荐 -->
+  <!-- 新鲜  -->
 </template>
 
 <script>

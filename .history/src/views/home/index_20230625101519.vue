@@ -5,11 +5,9 @@
       <!--左侧分类-->
       <HomeCategory />
       <!-- 轮播图 -->
-      <HomeBanner />
+      <HomeBanner
     </div>
   </div>
-  <!-- 新鲜好物 -->
-  <!-- 人气推荐 -->
 </template>
 
 <script>

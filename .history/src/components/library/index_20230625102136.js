@@ -3,7 +3,7 @@
 // vue3插件写法：导出一个对象，对象中有一个install方法，install方法有两个参数，第一个参数是app对象，第二个参数是可选的配置对象
 
 import XtxSkeleton from './xtx-skeleton.vue'
-import XtxCarousel from './xtx-carousel.vue'
+import X from './xtx-carousel.vue'
 
 export default {
   install (app, options) {
@@ -11,6 +11,5 @@ export default {
     // 在app上进行扩展，app提供component directive mount等方法
     // 如果要挂载原型方法，可以使用app.config.globalProperties
     app.component(XtxSkeleton.name, XtxSkeleton)
-    app.component(XtxCarousel.name, XtxCarousel)
   }
 }

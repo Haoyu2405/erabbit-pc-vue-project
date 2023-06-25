@@ -11,6 +11,5 @@ export default {
     // 在app上进行扩展，app提供component directive mount等方法
     // 如果要挂载原型方法，可以使用app.config.globalProperties
     app.component(XtxSkeleton.name, XtxSkeleton)
-    app.component(XtxCarousel.name, XtxCarousel)
   }
 }
