@@ -11,7 +11,7 @@
       >
         <RouterLink to="/">
           <img
-            :src="item.imgUrl"
+            src="img"
             alt=""
           />
         </RouterLink>

@@ -11,8 +11,8 @@ export const findBrand = (limit = 6) => {
 }
 
 /**
- * 获取广告区轮播图
- * @returns Promise
+ * 
+ * @returns 
  */
 export const findBanner = () => {
   return request('/home/banner', 'get')

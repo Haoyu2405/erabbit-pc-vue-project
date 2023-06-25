@@ -11,7 +11,7 @@ export const findBrand = (limit = 6) => {
 }
 
 /**
- * 获取广告区轮播图
+ * huo
  * @returns Promise
  */
 export const findBanner = () => {

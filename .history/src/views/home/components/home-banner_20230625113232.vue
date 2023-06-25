@@ -1,7 +1,7 @@
 <template>
   <div class="home-banner">
     <!-- 轮播图 -->
-    <XtxCarousel :sliders="sliders"/>
+    <XtxCarousel />
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import { findBanner } from '@/api/home'
 export default {
   name: 'HomeBanner',
   setup () {
-    // 获取轮播图数据
+    // 轮播图数据
     const sliders = ref([])
     findBanner().then(data => {
       sliders.value = data.result

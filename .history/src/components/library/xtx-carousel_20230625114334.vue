@@ -3,15 +3,10 @@
     <!-- 图片容器 -->
     <ul class="carousel-body">
       <!-- fade 修饰显示的图片 -->
-      <li
-        class="carousel-item"
-        v-for="(item, idx) in sliders"
-        :key="idx"
-        :class="{ fade: activeIndex === idx }"
-      >
+      <li class="carousel-item fade">
         <RouterLink to="/">
           <img
-            :src="item.imgUrl"
+            src="http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/1ba86bcc-ae71-42a3-bc3e-37b662f7f07e.jpg"
             alt=""
           />
         </RouterLink>
@@ -28,32 +23,21 @@
     <!-- 指示器 -->
     <div class="carousel-indicator">
       <!-- active 设置激活点的背景颜色 -->
-      <span
-        v-for="(item, idx) in sliders"
-        :key="idx"
-        :class="{ active: activeIndex === idx }"
-      ></span>
+      <span v-for="i in 5" :key="i"></span>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
 export default {
   name: 'XtxCarousel',
   // 传入轮播图数据
   props: {
     sliders: {
       type: Array,
-      // 箭头函数返回空数组作为默认值
-      default: () => []
+      default: () => [] 
     }
   },
-  setup () {
-    // 默认显示图片的索引
-    const activeIndex = ref(0)
-    return { activeIndex }
-  }
 }
 </script>
 <style scoped lang="less">

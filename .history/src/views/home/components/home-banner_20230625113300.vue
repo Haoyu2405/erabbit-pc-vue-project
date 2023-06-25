@@ -1,7 +1,7 @@
 <template>
   <div class="home-banner">
     <!-- 轮播图 -->
-    <XtxCarousel :sliders="sliders"/>
+    <XtxCarousel :s/>
   </div>
 </template>
 

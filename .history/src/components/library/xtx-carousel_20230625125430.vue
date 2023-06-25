@@ -51,7 +51,7 @@ export default {
   },
   setup () {
     // 默认显示图片的索引
-    const activeIndex = ref(0)
+    const activeIndex = ref(1)
     return { activeIndex }
   }
 }

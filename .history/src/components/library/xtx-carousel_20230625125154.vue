@@ -11,7 +11,7 @@
       >
         <RouterLink to="/">
           <img
-            :src="item.imgUrl"
+            src="http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/1ba86bcc-ae71-42a3-bc3e-37b662f7f07e.jpg"
             alt=""
           />
         </RouterLink>
