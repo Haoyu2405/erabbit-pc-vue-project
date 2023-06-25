@@ -113,7 +113,7 @@ export default {
     }
 
     // 4.组件销毁，清除定时器
-    onUnmounted(() => {
+    onUnmounted(()=>{
       clearInterval(timer)
     })
     return { activeIndex, stop, start, toggle }

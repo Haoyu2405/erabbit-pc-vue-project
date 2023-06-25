@@ -15,11 +15,11 @@
       </li>
     </ul>
     <!-- 上一张 -->
-    <a @click="toggle(-1)" href="javascript:;" class="carousel-btn prev"
+    <a href="javascript:;" class="carousel-btn prev"
       ><i class="iconfont icon-angle-left"></i
     ></a>
     <!-- 下一张 -->
-    <a @click="toggle(1)" href="javascript:;" class="carousel-btn next"
+    <a href="javascript:;" class="carousel-btn next"
       ><i class="iconfont icon-angle-right"></i
     ></a>
     <!-- 指示器 -->
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { onUnmounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 export default {
   name: 'XtxCarousel',
   props: {
@@ -61,7 +61,7 @@ export default {
     // 默认显示图片的索引
     const activeIndex = ref(0)
 
-    // 1.自动轮播的逻辑
+    // 自动轮播的逻辑
     // eslint-disable-next-line no-unused-vars
     let timer = null
     const autoPlayFn = () => {
@@ -87,7 +87,7 @@ export default {
       { immediate: true }
     )
 
-    // 2.鼠标移入暂停播放，移出自动播放
+    // 鼠标移入暂停播放，移出自动播放
     const stop = () => {
       clearInterval(timer)
     }
@@ -97,26 +97,12 @@ export default {
       }
     }
 
-    // 3.点击左右箭头切换上一张下一张图片
-    const toggle = step => {
-      const newIndex = activeIndex.value + step
-      // 判断是否越界
-      if (newIndex < 0) {
-        activeIndex.value = props.sliders.length - 1
-        return
-      }
-      if (newIndex > props.sliders.length) {
-        activeIndex.value = 0
-        return
-      }
-      activeIndex.value = newIndex
+    // 点击左右箭头切换上一张下一张图片
+    const toggle = () => {
+      const 
     }
 
-    // 4.组件销毁，清除定时器
-    onUnmounted(() => {
-      clearInterval(timer)
-    })
-    return { activeIndex, stop, start, toggle }
+    return { activeIndex, stop, start }
   }
 }
 </script>

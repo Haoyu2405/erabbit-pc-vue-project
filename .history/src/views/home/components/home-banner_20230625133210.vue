@@ -1,7 +1,7 @@
 <template>
   <div class="home-banner">
     <!-- 轮播图 -->
-    <!-- auto-play会自动识别成autoPlay且值为true，开启自动轮播 -->
+    <!-- auto-play会自动识别成autoPlay且 ，开启自动轮播 -->
     <XtxCarousel auto-play :sliders="sliders"/>
   </div>
 </template>

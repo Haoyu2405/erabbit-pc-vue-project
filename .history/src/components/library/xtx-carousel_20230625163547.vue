@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { onUnmounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 export default {
   name: 'XtxCarousel',
   props: {
@@ -113,9 +113,7 @@ export default {
     }
 
     // 4.组件销毁，清除定时器
-    onUnmounted(() => {
-      clearInterval(timer)
-    })
+    on
     return { activeIndex, stop, start, toggle }
   }
 }

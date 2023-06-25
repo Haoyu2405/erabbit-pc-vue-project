@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { onUnmounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 export default {
   name: 'XtxCarousel',
   props: {
@@ -97,7 +97,7 @@ export default {
       }
     }
 
-    // 3.点击左右箭头切换上一张下一张图片
+    // 点击左右箭头切换上一张下一张图片
     const toggle = step => {
       const newIndex = activeIndex.value + step
       // 判断是否越界
@@ -112,10 +112,6 @@ export default {
       activeIndex.value = newIndex
     }
 
-    // 4.组件销毁，清除定时器
-    onUnmounted(() => {
-      clearInterval(timer)
-    })
     return { activeIndex, stop, start, toggle }
   }
 }

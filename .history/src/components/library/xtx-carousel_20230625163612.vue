@@ -116,6 +116,7 @@ export default {
     onUnmounted(() => {
       clearInterval(timer)
     })
+    
     return { activeIndex, stop, start, toggle }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="xtx-carousel" @mouseenter="stop()" @mouseleave="start()">
+  <div class="xtx-carousel">
     <!-- 图片容器 -->
     <ul class="carousel-body">
       <!-- fade 修饰显示的图片 -->
@@ -15,18 +15,17 @@
       </li>
     </ul>
     <!-- 上一张 -->
-    <a @click="toggle(-1)" href="javascript:;" class="carousel-btn prev"
+    <a href="javascript:;" class="carousel-btn prev"
       ><i class="iconfont icon-angle-left"></i
     ></a>
     <!-- 下一张 -->
-    <a @click="toggle(1)" href="javascript:;" class="carousel-btn next"
+    <a href="javascript:;" class="carousel-btn next"
       ><i class="iconfont icon-angle-right"></i
     ></a>
     <!-- 指示器 -->
     <div class="carousel-indicator">
       <!-- active 设置激活点的背景颜色 -->
       <span
-        @click="activeIndex = idx"
         v-for="(item, idx) in sliders"
         :key="idx"
         :class="{ active: activeIndex === idx }"
@@ -36,7 +35,7 @@
 </template>
 
 <script>
-import { onUnmounted, ref, watch } from 'vue'
+import { ref } from 'vue'
 export default {
   name: 'XtxCarousel',
   props: {
@@ -57,66 +56,24 @@ export default {
       default: 3000
     }
   },
-  setup (props) {
+  setup () {
     // 默认显示图片的索引
     const activeIndex = ref(0)
 
-    // 1.自动轮播的逻辑
+    // 自动轮播的逻辑
     // eslint-disable-next-line no-unused-vars
     let timer = null
     const autoPlayFn = () => {
-      // 开启定时器前先清除定时器
-      clearInterval(timer)
       timer = setInterval(() => {
         activeIndex.value++
-        if (activeIndex.value >= props.sliders.length) {
+        if (activeIndex.value >= this.sliders.length) {
           activeIndex.value = 0
         }
-      }, props.interval)
+      }, this.interval)
     }
-    // 需要监听sliders数据变化，判断如果有数据且autoPlay为true时，才执行自动轮播
-    watch(
-      // 监听的数据
-      () => props.sliders,
-      () => {
-        if (props.sliders.length && props.autoPlay) {
-          autoPlayFn()
-        }
-      },
-      // 静态数据立即执行
-      { immediate: true }
-    )
+    // 需要监听sliders数据变化，判断
 
-    // 2.鼠标移入暂停播放，移出自动播放
-    const stop = () => {
-      clearInterval(timer)
-    }
-    const start = () => {
-      if (props.sliders.length && props.autoPlay) {
-        autoPlayFn()
-      }
-    }
-
-    // 3.点击左右箭头切换上一张下一张图片
-    const toggle = step => {
-      const newIndex = activeIndex.value + step
-      // 判断是否越界
-      if (newIndex < 0) {
-        activeIndex.value = props.sliders.length - 1
-        return
-      }
-      if (newIndex > props.sliders.length) {
-        activeIndex.value = 0
-        return
-      }
-      activeIndex.value = newIndex
-    }
-
-    // 4.组件销毁，清除定时器
-    onUnmounted(() => {
-      clearInterval(timer)
-    })
-    return { activeIndex, stop, start, toggle }
+    return { activeIndex }
   }
 }
 </script>
