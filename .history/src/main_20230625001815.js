@@ -11,4 +11,4 @@ import 'normalize.css'
 // 自己项目的重置样式和公用样式
 import '@/assets/styles/common.less'
 
-createApp(App).use(store).use(router).use(XtxUI).mount('#app')
+createApp(App).use(store).use(router).use.mount('#app')

@@ -11,10 +11,11 @@
 
 <script>
 import HomeCategory from './components/home-category.vue'
+import XtxSkeleton 
 export default {
   name: 'HomePage',
   components: {
-    HomeCategory,
+    HomeCategory
   }
 }
 </script>

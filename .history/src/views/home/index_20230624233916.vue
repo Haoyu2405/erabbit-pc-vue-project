@@ -6,6 +6,7 @@
       <HomeCategory />
       <!-- 轮播图 -->
     </div>
+    <XtxSkeleton width="200px" height="200px" bg="red" animated/>
   </div>
 </template>
 
