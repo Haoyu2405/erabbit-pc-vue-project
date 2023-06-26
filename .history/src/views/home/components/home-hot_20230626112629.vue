@@ -32,27 +32,4 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.goods-list {
-  display: flex;
-  justify-content: space-between;
-  height: 426px;
-  li {
-    width: 306px;
-    height: 406px;
-    .hoverShadow();
-    img {
-      width: 306px;
-      height: 306px;
-    }
-    p {
-      font-size: 22px;
-      padding: 12px;
-      text-align: center;
-    }
-    .desc {
-      color: #999;
-      font-size: 18px;
-    }
-  }
-}
 </style>

@@ -11,7 +11,7 @@
   <!-- 新鲜好物 -->
   <HomeNew />
   <!-- 人气推荐 -->
-  <HomeHot />
+
 </template>
 
 <script>
@@ -24,8 +24,7 @@ export default {
   components: {
     HomeCategory,
     HomeBanner,
-    HomeNew,
-    HomeHot
+    HomeNew
   }
 }
 </script>

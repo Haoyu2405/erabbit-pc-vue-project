@@ -29,6 +29,6 @@ export const findNew = () => {
  * 人气推荐
  * @returns Promise
  */
-export const findHot = () => {
+export const findhot = () => {
   return request('/home/hot', 'get')
 }

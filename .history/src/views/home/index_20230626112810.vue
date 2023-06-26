@@ -11,7 +11,8 @@
   <!-- 新鲜好物 -->
   <HomeNew />
   <!-- 人气推荐 -->
-  <HomeHot />
+  <H
+
 </template>
 
 <script>

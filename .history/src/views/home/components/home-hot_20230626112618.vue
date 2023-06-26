@@ -24,35 +24,9 @@ export default {
   setup () {
     const goods = ref([])
     // 获取人气推荐数据
-    findHot().then(data => {
-      goods.value = data.result
-    })
+    findHot
     return { goods }
   }
 }
 </script>
-<style scoped lang="less">
-.goods-list {
-  display: flex;
-  justify-content: space-between;
-  height: 426px;
-  li {
-    width: 306px;
-    height: 406px;
-    .hoverShadow();
-    img {
-      width: 306px;
-      height: 306px;
-    }
-    p {
-      font-size: 22px;
-      padding: 12px;
-      text-align: center;
-    }
-    .desc {
-      color: #999;
-      font-size: 18px;
-    }
-  }
-}
-</style>
+<style scoped lang="less"></style>

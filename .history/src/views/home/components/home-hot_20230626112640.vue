@@ -46,7 +46,7 @@ export default {
     }
     p {
       font-size: 22px;
-      padding: 12px;
+      padding-top: 12px;
       text-align: center;
     }
     .desc {
