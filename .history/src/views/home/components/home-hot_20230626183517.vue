@@ -1,16 +1,18 @@
 <template>
   <HomePanel title="人气推荐" sub-title="人气爆款 不容错过">
-    <Transition name="fade">
+   <Transition name="fade">
       <ul v-if="goods.length" class="goods-list">
-        <li v-for="item in goods" :key="item.id">
-          <RouterLink to="/">
-            <img :src="item.picture" alt="" />
-            <p class="name">{{ item.title }}</p>
-            <p class="desc">{{ item.alt }}</p>
-          </RouterLink>
-        </li>
-      </ul>
-      <HomeSkeleton v-else />
+      <li v-for="item in goods" :key="item.id">
+        <RouterLink to="/">
+          <img :src="item.picture" alt="" />
+          <p class="name">{{ item.title }}</p>
+          <p class="desc">{{ item.alt }}</p>
+        </RouterLink>
+      </li>
+    </ul>
+<HomeSkeleton v-else />
+
+      <HomeSkeleton bg="#f0f9f4" v-else />
     </Transition>
   </HomePanel>
 </template>

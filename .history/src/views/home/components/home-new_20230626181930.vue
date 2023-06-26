@@ -5,8 +5,8 @@
         <XtxMore path="/goods" />
       </template>
       <!-- 面板内容 -->
-      <Transition name="fade">
-        <ul v-if="goods.length" class="goods-list">
+      <Transition name="fade"
+        ><ul v-if="goods.length" class="goods-list">
           <li v-for="item in goods" :key="item.id">
             <RouterLink :to="`/product/${item.id}`">
               <img :src="item.picture" alt="" />
@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 import HomePanel from './home-panel.vue'
-import HomeSkeleton from './home-skeleton.vue'
 import { findNew } from '@/api/home'
+import HomeSkeleton from './home-skeleton.vue'
+import { ref } from 'vue'
 export default {
   name: 'HomeNew',
   components: {
