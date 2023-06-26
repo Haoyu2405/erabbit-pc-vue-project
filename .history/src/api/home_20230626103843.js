@@ -23,5 +23,6 @@ export const findBanner = () => {
  * @returns Promise
  */
 export const findNew = () => {
-  return request('/home/new', 'get')
+  return request('/home/banner', 'get')
 }
+

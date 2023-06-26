@@ -20,7 +20,7 @@
 
 <script>
 import HomePanel from './home-panel.vue'
-import { findNew } from '@/api/home'
+import {findNew{} from '@/api/home'
 import { ref } from 'vue'
 export default {
   name: 'HomeNew',

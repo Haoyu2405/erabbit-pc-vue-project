@@ -9,7 +9,6 @@
     </div>
   </div>
   <!-- 新鲜好物 -->
-  <HomeNew />
   <!-- 人气推荐 -->
 
 </template>

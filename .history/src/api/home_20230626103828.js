@@ -19,9 +19,10 @@ export const findBanner = () => {
 }
 
 /**
- * 获取新鲜好物
+ * 获取广告区轮播图
  * @returns Promise
  */
-export const findNew = () => {
-  return request('/home/new', 'get')
+export const findBanner = () => {
+  return request('/home/banner', 'get')
 }
+

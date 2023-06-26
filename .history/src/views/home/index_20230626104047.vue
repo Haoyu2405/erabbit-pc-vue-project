@@ -9,21 +9,28 @@
     </div>
   </div>
   <!-- 新鲜好物 -->
-  <HomeNew />
   <!-- 人气推荐 -->
-
+  <HomePanel title="新鲜好物" sub-title="人气推荐">
+    <template #right>
+      <XtxMore path="/goods" />
+    </template>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+  </HomePanel>
 </template>
 
 <script>
 import HomeCategory from './components/home-category.vue'
 import HomeBanner from './components/home-banner.vue'
-import HomeNew from './components/home-new.vue'
 export default {
   name: 'HomePage',
   components: {
     HomeCategory,
     HomeBanner,
-    HomeNew
+    HomePanel
   }
 }
 </script>

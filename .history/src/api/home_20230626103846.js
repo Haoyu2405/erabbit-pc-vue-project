@@ -25,3 +25,4 @@ export const findBanner = () => {
 export const findNew = () => {
   return request('/home/new', 'get')
 }
+
