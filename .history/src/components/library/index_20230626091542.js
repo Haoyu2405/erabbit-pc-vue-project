@@ -13,6 +13,8 @@ export default {
     // 如果要挂载原型方法，可以使用app.config.globalProperties
     app.component(XtxSkeleton.name, XtxSkeleton)
     app.component(XtxCarousel.name, XtxCarousel)
-    app.component(XtxMore.name, XtxMore)
+    app.component(XtxMore
+.name, XtxMore
+)
   }
 }

@@ -14,11 +14,7 @@
     <template #right>
       <XtxMore path="/goods" />
     </template>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
+1
   </HomePanel>
 </template>
 

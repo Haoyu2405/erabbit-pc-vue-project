@@ -4,7 +4,7 @@
 
 import XtxSkeleton from './xtx-skeleton.vue'
 import XtxCarousel from './xtx-carousel.vue'
-import XtxMore from './xtx-more.vue'
+import Xtx from './xtx-more.vue'
 
 export default {
   install (app, options) {
@@ -13,6 +13,5 @@ export default {
     // 如果要挂载原型方法，可以使用app.config.globalProperties
     app.component(XtxSkeleton.name, XtxSkeleton)
     app.component(XtxCarousel.name, XtxCarousel)
-    app.component(XtxMore.name, XtxMore)
   }
 }

@@ -12,13 +12,9 @@
   <!-- 人气推荐 -->
   <HomePanel title="新鲜好物" sub-title="人气推荐">
     <template #right>
-      <XtxMore path="/goods" />
+<Xt
     </template>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
+
   </HomePanel>
 </template>
 
