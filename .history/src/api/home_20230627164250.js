@@ -36,6 +36,6 @@ export const findHot = () => {
  * 商品板块
  * @returns Promise
  */
-export const findGoods = () => {
-  return request('/home/goods', 'get')
+export const findHot = () => {
+  return request('/home/hot', 'get')
 }

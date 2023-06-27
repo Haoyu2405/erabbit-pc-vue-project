@@ -15,7 +15,6 @@
   <!-- 热门品牌 -->
   <HomeBrand />
   <!-- 产品区块 -->
-  <HomeProduct />
 </template>
 
 <script>
@@ -32,8 +31,7 @@ export default {
     HomeBanner,
     HomeNew,
     HomeHot,
-    HomeBrand,
-    HomeProduct
+    HomeBrand
   }
 }
 </script>

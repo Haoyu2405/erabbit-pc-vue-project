@@ -28,8 +28,7 @@ export const useLazyData = apiFn => {
       }
     },
     {
-      // 配置选项，交叉比例大于0就触发
-      threshold: 0
+      threshold
     }
   )
   return { result, target }
