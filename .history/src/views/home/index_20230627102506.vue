@@ -13,7 +13,6 @@
   <!-- 人气推荐 -->
   <HomeHot />
   <!-- 热门品牌 -->
-  <HomeBrand />
 </template>
 
 <script>
