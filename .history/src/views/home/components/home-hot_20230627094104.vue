@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import HomePanel from './home-panel.vue'
 import HomeSkeleton from './home-skeleton.vue'
 import { findHot } from '@/api/home'
@@ -27,9 +28,13 @@ export default {
     HomeSkeleton
   },
   setup () {
-    // 获取人气推荐数据
-    const { target, result } = useLazyData(findHot)
-    return { goods: result, target }
+    // const goods = ref([])
+    // // 获取人气推荐数据
+    // findHot().then(data => {
+    //   goods.value = data.result
+    // })
+    const {target,goods:result} = useLazyData(findHot)
+    return { goods: }
   }
 }
 </script>

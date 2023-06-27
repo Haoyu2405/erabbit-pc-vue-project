@@ -27,7 +27,8 @@ export default {
     HomeSkeleton
   },
   setup () {
-    // 获取人气推荐数据
+    // const g
+      // 获取人气推荐数据
     const { target, result } = useLazyData(findHot)
     return { goods: result, target }
   }

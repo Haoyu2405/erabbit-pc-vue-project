@@ -33,7 +33,8 @@ export default {
     HomeSkeleton
   },
   setup () {
-    // 获取新鲜好物数据
+    // const 
+      // 获取新鲜好物数据
     const { target, result } = useLazyData(findNew)
     return { goods: result, target }
   }
