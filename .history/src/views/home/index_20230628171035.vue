@@ -17,7 +17,7 @@
   <!-- 产品区块 -->
   <HomeProduct />
   <!-- 最新专题 -->
-  <HomeSpecial />
+  <HomeSpe
 </template>
 
 <script>
@@ -36,8 +36,7 @@ export default {
     HomeNew,
     HomeHot,
     HomeBrand,
-    HomeProduct,
-    HomeSpecial
+    HomeProduct
   }
 }
 </script>

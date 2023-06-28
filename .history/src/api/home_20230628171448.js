@@ -40,9 +40,10 @@ export const findGoods = () => {
   return request('/home/goods', 'get')
 }
 /**
- * 最新专题
+ * 最新 
  * @returns Promise
  */
-export const findSpecial = () => {
-  return request('/home/special', 'get')
+export const findGoods = () => {
+  return request('/home/goods', 'get')
 }
+

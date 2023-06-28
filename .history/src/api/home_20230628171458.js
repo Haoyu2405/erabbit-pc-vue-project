@@ -43,6 +43,7 @@ export const findGoods = () => {
  * 最新专题
  * @returns Promise
  */
-export const findSpecial = () => {
-  return request('/home/special', 'get')
+export const find  = () => {
+  return request('/home/goods', 'get')
 }
+

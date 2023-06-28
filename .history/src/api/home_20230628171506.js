@@ -46,3 +46,4 @@ export const findGoods = () => {
 export const findSpecial = () => {
   return request('/home/special', 'get')
 }
+

@@ -36,8 +36,7 @@ export default {
     HomeNew,
     HomeHot,
     HomeBrand,
-    HomeProduct,
-    HomeSpecial
+    HomeProduct
   }
 }
 </script>
