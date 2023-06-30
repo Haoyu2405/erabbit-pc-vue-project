@@ -16,7 +16,7 @@ export default {
     app.component(XtxSkeleton.name, XtxSkeleton)
     app.component(XtxCarousel.name, XtxCarousel)
     app.component(XtxMore.name, XtxMore)
-    app.component(XtxBread.name, XtxBread)
+    app.component(XtxMore.name, XtxMore)
     // 定义指令
     defineDirective(app)
   }

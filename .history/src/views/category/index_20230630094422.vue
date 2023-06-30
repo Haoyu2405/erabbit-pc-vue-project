@@ -2,7 +2,7 @@
   <div class="top-category">
     <div class="container">
       <!-- 面包屑 -->
-      <XtxBread parentName="电器" parentPath="/category/1005000">空调</XtxBread>
+      <XtxBread parentName="d"></XtxBread>
       <!-- 轮播图 -->
       <!-- 全部分类 -->
       <!-- 各个分类推荐商品 -->
