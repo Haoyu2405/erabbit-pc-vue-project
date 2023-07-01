@@ -12,7 +12,7 @@ export const baseURL = '/api'
 const instance = axios.create({
   // axios的一些配置，baseURL timeout
   baseURL,
-  timeout: 5000,
+  timeout: 5000
 })
 
 instance.interceptors.request.use(

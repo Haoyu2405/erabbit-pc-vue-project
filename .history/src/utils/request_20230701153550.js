@@ -8,7 +8,7 @@ import store from '@/store'
 import router from '@/router'
 
 // 导出基准地址
-export const baseURL = '/api'
+export const baseURL = 'a'
 const instance = axios.create({
   // axios的一些配置，baseURL timeout
   baseURL,

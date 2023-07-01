@@ -14,10 +14,10 @@ module.exports = defineConfig({
       ]
     }
   },
-  devServer: {
+   devServer: {
     proxy: {
       '/api': {
-        target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
+        target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
