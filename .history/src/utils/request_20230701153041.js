@@ -13,6 +13,7 @@ const instance = axios.create({
   // axios的一些配置，baseURL timeout
   baseURL,
   timeout: 5000,
+  withCredentials: true // 添加跨域请求的配置
 })
 
 instance.interceptors.request.use(

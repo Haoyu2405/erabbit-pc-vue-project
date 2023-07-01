@@ -19,20 +19,11 @@ export default {
     // 全局组件
     // 在app上进行扩展，app提供component directive mount等方法
     // 如果要挂载原型方法，可以使用app.config.globalProperties
-    // app.component(XtxSkeleton.name, XtxSkeleton)
-    // app.component(XtxCarousel.name, XtxCarousel)
-    // app.component(XtxMore.name, XtxMore)
-    // app.component(XtxBread.name, XtxBread)
-    // app.component(XtxBreadItem.name, XtxBreadItem)
-    // 根据正则表达式匹配到的文件名字组成的数组，遍历这个数组，拿到每一个组件的名字和组件对象，然后注册全局组件
-    importFn.keys().forEach(fileName => {
-      // 拿到组件对象
-      const component = importFn(fileName).default
-      // 拿到组件名字
-      const componentName = component.name
-      // 注册全局组件
-      app.component(componentName, component)
-    })
+    app.component(XtxSkeleton.name, XtxSkeleton)
+    app.component(XtxCarousel.name, XtxCarousel)
+    app.component(XtxMore.name, XtxMore)
+    app.component(XtxBread.name, XtxBread)
+    app.component(XtxBreadItem.name, XtxBreadItem)
     // 定义指令
     defineDirective(app)
   }

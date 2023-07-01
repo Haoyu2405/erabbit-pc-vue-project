@@ -8,31 +8,17 @@ import defaultImg from '@/assets/images/200.png'
 // import XtxMore from './xtx-more.vue'
 // import XtxBread from './xtx-bread.vue'
 // import XtxBreadItem from './xtx-bread-item.vue'
-// 使用require.context()方法，自动导入所有的组件
-// require.context()方法有三个参数：要搜索的文件夹目录，是否还应该搜索它的子目录，以及一个匹配文件的正则表达式
-// require.context()方法返回一个函数，这个函数有3个属性：resolve, keys, id
-// keys属性是一个函数，返回匹配成功模块的名字组成的数组
-const importFn = require.context('./', false, /\.vue$/)
 
 export default {
   install (app, options) {
     // 全局组件
     // 在app上进行扩展，app提供component directive mount等方法
     // 如果要挂载原型方法，可以使用app.config.globalProperties
-    // app.component(XtxSkeleton.name, XtxSkeleton)
-    // app.component(XtxCarousel.name, XtxCarousel)
-    // app.component(XtxMore.name, XtxMore)
-    // app.component(XtxBread.name, XtxBread)
-    // app.component(XtxBreadItem.name, XtxBreadItem)
-    // 根据正则表达式匹配到的文件名字组成的数组，遍历这个数组，拿到每一个组件的名字和组件对象，然后注册全局组件
-    importFn.keys().forEach(fileName => {
-      // 拿到组件对象
-      const component = importFn(fileName).default
-      // 拿到组件名字
-      const componentName = component.name
-      // 注册全局组件
-      app.component(componentName, component)
-    })
+    app.component(XtxSkeleton.name, XtxSkeleton)
+    app.component(XtxCarousel.name, XtxCarousel)
+    app.component(XtxMore.name, XtxMore)
+    app.component(XtxBread.name, XtxBread)
+    app.component(XtxBreadItem.name, XtxBreadItem)
     // 定义指令
     defineDirective(app)
   }

@@ -24,15 +24,7 @@ export default {
     // app.component(XtxMore.name, XtxMore)
     // app.component(XtxBread.name, XtxBread)
     // app.component(XtxBreadItem.name, XtxBreadItem)
-    // 根据正则表达式匹配到的文件名字组成的数组，遍历这个数组，拿到每一个组件的名字和组件对象，然后注册全局组件
-    importFn.keys().forEach(fileName => {
-      // 拿到组件对象
-      const component = importFn(fileName).default
-      // 拿到组件名字
-      const componentName = component.name
-      // 注册全局组件
-      app.component(componentName, component)
-    })
+    //  
     // 定义指令
     defineDirective(app)
   }

@@ -3,11 +3,11 @@
 // vue3插件写法：导出一个对象，对象中有一个install方法，install方法有两个参数，第一个参数是app对象，第二个参数是可选的配置对象
 
 import defaultImg from '@/assets/images/200.png'
-// import XtxSkeleton from './xtx-skeleton.vue'
-// import XtxCarousel from './xtx-carousel.vue'
-// import XtxMore from './xtx-more.vue'
-// import XtxBread from './xtx-bread.vue'
-// import XtxBreadItem from './xtx-bread-item.vue'
+- import XtxSkeleton from './xtx-skeleton.vue'
+- import XtxCarousel from './xtx-carousel.vue'
+- import XtxMore from './xtx-more.vue'
+- import XtxBread from './xtx-bread.vue'
+- import XtxBreadItem from './xtx-bread-item.vue'
 // 使用require.context()方法，自动导入所有的组件
 // require.context()方法有三个参数：要搜索的文件夹目录，是否还应该搜索它的子目录，以及一个匹配文件的正则表达式
 // require.context()方法返回一个函数，这个函数有3个属性：resolve, keys, id
@@ -19,11 +19,11 @@ export default {
     // 全局组件
     // 在app上进行扩展，app提供component directive mount等方法
     // 如果要挂载原型方法，可以使用app.config.globalProperties
-    // app.component(XtxSkeleton.name, XtxSkeleton)
-    // app.component(XtxCarousel.name, XtxCarousel)
-    // app.component(XtxMore.name, XtxMore)
-    // app.component(XtxBread.name, XtxBread)
-    // app.component(XtxBreadItem.name, XtxBreadItem)
+    = app.component(XtxSkeleton.name, XtxSkeleton)
+    = app.component(XtxCarousel.name, XtxCarousel)
+    = app.component(XtxMore.name, XtxMore)
+    = app.component(XtxBread.name, XtxBread)
+    = app.component(XtxBreadItem.name, XtxBreadItem)
     // 根据正则表达式匹配到的文件名字组成的数组，遍历这个数组，拿到每一个组件的名字和组件对象，然后注册全局组件
     importFn.keys().forEach(fileName => {
       // 拿到组件对象

@@ -3,11 +3,11 @@
 // vue3插件写法：导出一个对象，对象中有一个install方法，install方法有两个参数，第一个参数是app对象，第二个参数是可选的配置对象
 
 import defaultImg from '@/assets/images/200.png'
-// import XtxSkeleton from './xtx-skeleton.vue'
-// import XtxCarousel from './xtx-carousel.vue'
-// import XtxMore from './xtx-more.vue'
-// import XtxBread from './xtx-bread.vue'
-// import XtxBreadItem from './xtx-bread-item.vue'
+/ import XtxSkeleton from './xtx-skeleton.vue'
+/ import XtxCarousel from './xtx-carousel.vue'
+/ import XtxMore from './xtx-more.vue'
+/ import XtxBread from './xtx-bread.vue'
+/ import XtxBreadItem from './xtx-bread-item.vue'
 // 使用require.context()方法，自动导入所有的组件
 // require.context()方法有三个参数：要搜索的文件夹目录，是否还应该搜索它的子目录，以及一个匹配文件的正则表达式
 // require.context()方法返回一个函数，这个函数有3个属性：resolve, keys, id

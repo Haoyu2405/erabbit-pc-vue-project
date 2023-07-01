@@ -30,9 +30,6 @@ export default {
       const component = importFn(fileName).default
       // 拿到组件名字
       const componentName = component.name
-      // 注册全局组件
-      app.component(componentName, component)
-    })
     // 定义指令
     defineDirective(app)
   }
