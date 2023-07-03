@@ -9,7 +9,7 @@
       <!-- 轮播图 -->
       <XtxCarousel :sliders="sliders" style="height: 500px" auto-play />
       <!-- 所有二级分类 -->
-      <div class="sub-list">
+      <div class="sub-list" v-if="topCategory && topCategory.children">
         <h3>全部分类</h3>
         <ul>
           <li v-for="sub in topCategory.children" :key="sub.id">
