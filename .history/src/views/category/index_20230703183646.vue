@@ -14,8 +14,10 @@
         <ul>
           <li v-for="sub in topCategory.children" :key="sub.id">
             <a href="javascript:;">
-              <img :src="sub.picture" />
-              <p>{{ sub.name }}</p>
+              <img
+                src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/img/category%20(9).png"
+              />
+              <p>空调</p>
             </a>
           </li>
         </ul>

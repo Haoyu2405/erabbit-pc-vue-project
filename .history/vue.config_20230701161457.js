@@ -14,7 +14,7 @@ module.exports = defineConfig({
       ]
     }
   },
-  // 通过反向代理解决开发时前端跨域问题
+  // 
   devServer: {
     proxy: {
       '/api': {

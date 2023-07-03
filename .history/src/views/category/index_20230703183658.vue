@@ -14,8 +14,10 @@
         <ul>
           <li v-for="sub in topCategory.children" :key="sub.id">
             <a href="javascript:;">
-              <img :src="sub.picture" />
-              <p>{{ sub.name }}</p>
+              <img
+                :src=
+              />
+              <p>空调</p>
             </a>
           </li>
         </ul>

@@ -4,18 +4,20 @@
       <!-- 面包屑 -->
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
-        <XtxBreadItem v-if="topCategory">{{ topCategory.name }}</XtxBreadItem>
+        <XtxBreadItem v-if="top">空调</XtxBreadItem>
       </XtxBread>
       <!-- 轮播图 -->
       <XtxCarousel :sliders="sliders" style="height: 500px" auto-play />
       <!-- 所有二级分类 -->
-      <div class="sub-list" v-if="topCategory && topCategory.children">
+      <div class="sub-list">
         <h3>全部分类</h3>
         <ul>
-          <li v-for="sub in topCategory.children" :key="sub.id">
+          <li v-for="i in 8" :key="i">
             <a href="javascript:;">
-              <img :src="sub.picture" />
-              <p>{{ sub.name }}</p>
+              <img
+                src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/img/category%20(9).png"
+              />
+              <p>空调</p>
             </a>
           </li>
         </ul>

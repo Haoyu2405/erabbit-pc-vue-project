@@ -4,18 +4,20 @@
       <!-- 面包屑 -->
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
-        <XtxBreadItem v-if="topCategory">{{ topCategory.name }}</XtxBreadItem>
+        <XtxBreadItem>空调</XtxBreadItem>
       </XtxBread>
       <!-- 轮播图 -->
-      <XtxCarousel :sliders="sliders" style="height: 500px" auto-play />
+      <XtxCarousel :sliders="sliders" style="height: 500px" auto-play/>
       <!-- 所有二级分类 -->
-      <div class="sub-list" v-if="topCategory && topCategory.children">
+      <div class="sub-list">
         <h3>全部分类</h3>
         <ul>
-          <li v-for="sub in topCategory.children" :key="sub.id">
+          <li v-for="i in 8" :key="i">
             <a href="javascript:;">
-              <img :src="sub.picture" />
-              <p>{{ sub.name }}</p>
+              <img
+                src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/img/category%20(9).png"
+              />
+              <p>空调</p>
             </a>
           </li>
         </ul>
@@ -26,9 +28,8 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
-import { useStore } from 'vuex'
-import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+import {}
 import { findBanner } from '@/api/home'
 export default {
   name: 'TopCategory',
@@ -41,15 +42,8 @@ export default {
     // 面包屑+所有子分类 vuex
     const store = useStore()
     const route = useRoute()
-    const topCategory = computed(() => {
-      return store.state.category.list.find(item => {
-        // 当前顶级分类的id === 路由参数中的id
-        return item.id === route.params.id
-      })
-    })
     return {
-      sliders,
-      topCategory
+      sliders
     }
   }
 }

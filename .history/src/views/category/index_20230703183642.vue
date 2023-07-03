@@ -12,10 +12,12 @@
       <div class="sub-list" v-if="topCategory && topCategory.children">
         <h3>全部分类</h3>
         <ul>
-          <li v-for="sub in topCategory.children" :key="sub.id">
+          <li v-for="sub in topCategory.children" :key="i">
             <a href="javascript:;">
-              <img :src="sub.picture" />
-              <p>{{ sub.name }}</p>
+              <img
+                src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/img/category%20(9).png"
+              />
+              <p>空调</p>
             </a>
           </li>
         </ul>
