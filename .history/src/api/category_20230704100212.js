@@ -11,9 +11,9 @@ export const findAllCategory = () => {
 }
 
 /**
- * 获取顶级类目信息（children属性就是各个子分类）
- * @param {String} id - 顶级类目id
- * @returns promise
+ * 获取顶级分类
+ * @param {String} id -  
+ * @returns 
  */
 export const findTopCategory = (id) => {
   return request('/category', 'get', { id })

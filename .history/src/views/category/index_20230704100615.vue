@@ -30,7 +30,6 @@ import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import { findBanner } from '@/api/home'
-import { findTopCategory } from '@/api/category'
 export default {
   name: 'TopCategory',
   setup () {
@@ -56,13 +55,10 @@ export default {
 
     // 获取各个子类目下的推荐商品
     const subList = ref([])
-    findTopCategory(route.params.id).then(data => {
-      subList.value = data.result.children
-    })
+    find
     return {
       sliders,
-      topCategory,
-      subList
+      topCategory
     }
   }
 }

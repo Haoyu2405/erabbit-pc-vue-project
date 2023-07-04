@@ -40,7 +40,7 @@ export default {
       // 给每个分类加上控制二级分类显示隐藏的数据
       data.result.forEach(top => {
         top.open = false
-        // console.log(data.result)
+        console.log(data.result)
       })
       // 修改分类数据
       commit('setList', data.result)

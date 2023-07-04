@@ -56,13 +56,10 @@ export default {
 
     // 获取各个子类目下的推荐商品
     const subList = ref([])
-    findTopCategory(route.params.id).then(data => {
-      subList.value = data.result.children
-    })
+    findTopCategory(route.)
     return {
       sliders,
-      topCategory,
-      subList
+      topCategory
     }
   }
 }
