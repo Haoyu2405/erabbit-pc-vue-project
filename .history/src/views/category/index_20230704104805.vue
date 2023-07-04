@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import { findBanner } from '@/api/home'
@@ -79,19 +79,10 @@ export default {
         subList.value = data.result.children
       })
     }
-    /**
-     * 动态路由不会重新初始化组件
-     * 解决办法：监听地址栏id的变化，如果变化了就去加载数据，但这样组件刚初始化时又不会有加载了。
-     * 不过可以通过watch提供的immediate: true，watch监听的组件刚初始化时主动触发一次。
-     */
-    watch(
-      // 监听对象下的属性时，需要使用函数
-      () => route.params.id,
-      newVal => {
-        newVal && getSubList()
-      },
-      { immediate: true }
-    )
+    watch(() => route.params.id,(newVal)=>{
+      newVal && getSubList()
+
+    },{setImmediate:true}})
     return {
       sliders,
       topCategory,

@@ -21,18 +21,14 @@
         </ul>
       </div>
       <!-- 各个分类推荐商品 -->
-      <div class="ref-goods" v-for="sub in subList" :key="sub.id">
+      <div class="ref-goods">
         <div class="head">
-          <h3>- {{ sub.name }} -</h3>
+          <h3>- 海鲜 -</h3>
           <p class="tag">温暖柔软，品质之选</p>
-          <XtxMore :path="`/category/sub/${sub.id}`" />
+          <XtxMore />
         </div>
         <div class="body">
-          <GoodsItem
-            v-for="goods in sub.goods"
-            :key="goods.id"
-            :goods="goods"
-          />
+          <GoodsItem v-for="i in 5" :key="i" />
         </div>
       </div>
     </div>
@@ -40,7 +36,7 @@
 </template>
 
 <script>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import { findBanner } from '@/api/home'
@@ -74,24 +70,9 @@ export default {
 
     // 获取各个子类目下的推荐商品
     const subList = ref([])
-    const getSubList = () => {
-      findTopCategory(route.params.id).then(data => {
-        subList.value = data.result.children
-      })
-    }
-    /**
-     * 动态路由不会重新初始化组件
-     * 解决办法：监听地址栏id的变化，如果变化了就去加载数据，但这样组件刚初始化时又不会有加载了。
-     * 不过可以通过watch提供的immediate: true，watch监听的组件刚初始化时主动触发一次。
-     */
-    watch(
-      // 监听对象下的属性时，需要使用函数
-      () => route.params.id,
-      newVal => {
-        newVal && getSubList()
-      },
-      { immediate: true }
-    )
+    findTopCategory(route.params.id).then(data => {
+      subList.value = data.result.children
+    })
     return {
       sliders,
       topCategory,
