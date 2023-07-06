@@ -4,10 +4,8 @@
       <!-- 面包屑 -->
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
-        <Transition name="fade-right" mode="out-in">
-          <XtxBreadItem :key="topCategory.id">{{
-            topCategory.name
-          }}</XtxBreadItem>
+        <Transition name="fade-right">
+          <XtxBreadItem :key="">{{ topCategory.name }}</XtxBreadItem>
         </Transition>
       </XtxBread>
       <!-- 轮播图 -->
@@ -105,6 +103,24 @@ export default {
 }
 </script>
 <style scoped lang="less">
+// 面包屑切换动画
+// 进入 位移20px 透明度0 过渡0.5s  位置0 透明度1
+// 离开 位置0 透明度1 过渡0.5s  位移20px 透明度0
+.fade-right-enter-from,
+.fade-right-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: all 0.5s;
+}
+.fade-right-enter-to,
+.fade-right-leave-from {
+  transform: none;
+  opacity: 1;
+}
+
 .top-category {
   h3 {
     font-size: 28px;

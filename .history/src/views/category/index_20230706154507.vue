@@ -4,10 +4,11 @@
       <!-- 面包屑 -->
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
+        <!-- mode="out-in" 先执行离开动画，然后在其完成之后再执行元素的进入动画-->
         <Transition name="fade-right" mode="out-in">
-          <XtxBreadItem :key="topCategory.id">{{
-            topCategory.name
-          }}</XtxBreadItem>
+          <XtxBreadItem :key="topCategory.id">
+            {{ topCategory.name }}
+          </XtxBreadItem>
         </Transition>
       </XtxBread>
       <!-- 轮播图 -->
@@ -105,6 +106,8 @@ export default {
 }
 </script>
 <style scoped lang="less">
+
+
 .top-category {
   h3 {
     font-size: 28px;

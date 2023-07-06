@@ -5,9 +5,7 @@
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
         <Transition name="fade-right" mode="out-in">
-          <XtxBreadItem :key="topCategory.id">{{
-            topCategory.name
-          }}</XtxBreadItem>
+          <XtxBreadItem :key="topCategory.id">{{ topCategory.name }}</XtxBreadItem>
         </Transition>
       </XtxBread>
       <!-- 轮播图 -->
@@ -105,6 +103,8 @@ export default {
 }
 </script>
 <style scoped lang="less">
+
+
 .top-category {
   h3 {
     font-size: 28px;
