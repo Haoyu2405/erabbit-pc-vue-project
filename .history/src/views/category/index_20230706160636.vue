@@ -5,7 +5,8 @@
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
         <Transition name="fade-right" mode="out-in">
-          <!-- 不同的key可以创建移除元素，创造触发动画条件 -->
+          <!-- 不同的key可以创建移除元素，创造触发动画条件
+ -->
           <XtxBreadItem :key="topCategory.id">{{
             topCategory.name
           }}</XtxBreadItem>

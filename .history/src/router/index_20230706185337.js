@@ -41,9 +41,8 @@ const router = createRouter({
   // 使用hash的路由模式
   history: createWebHashHistory(),
   routes,
-  // 每次切换路由,页面滚动条都会回到顶部
-  // vue2.0 x y
-  // vue3.0 top left
+  // 每次切换路由页面滚动条都会回到顶部
+  vue
   scrollBehavior: () => ({ top: 0, left: 0 })
 })
 
