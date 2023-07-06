@@ -93,6 +93,7 @@ export default {
       // 监听对象下的属性时，需要使用函数
       () => route.params.id,
       newVal => {
+        // newVal && getSubList()
         // 在顶级类目下才发请求
         if (newVal && `/category/${newVal}` === route.path) {
           getSubList()
