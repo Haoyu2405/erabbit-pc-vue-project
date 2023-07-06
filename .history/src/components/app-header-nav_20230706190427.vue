@@ -7,7 +7,7 @@
       <li
         v-for="item in list"
         :key="item.id"
-        @mousemove="show(item)"
+        @mouse="show(item)"
         @mouseleave="hide(item)"
       >
         <RouterLink @click="hide(item)" :to="`/category/${item.id}`">
