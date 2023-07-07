@@ -6,7 +6,7 @@ export default {
   namespaced: true,
   state () {
     return {
-      // 分类信息集合,依赖topCategory重新设置，保证初始化就要数据，不至于白屏
+      // 分类信息集合,依赖tpCategory重新设置，保证初始化就要数据，不至于白屏
       list: topCategory.map(item => ({ name: item }))
     }
   },

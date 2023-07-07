@@ -9,6 +9,7 @@
 
 <script>
 import SubBread from './components/sub-bread.vue'
+
 export default {
   name: 'SubCategory',
   components: {

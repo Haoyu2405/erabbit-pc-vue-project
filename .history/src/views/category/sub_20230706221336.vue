@@ -8,12 +8,8 @@
 </template>
 
 <script>
-import SubBread from './components/sub-bread.vue'
 export default {
-  name: 'SubCategory',
-  components: {
-    SubBread
-  }
+  name: 'SubCategory'
 }
 </script>
 <style scoped lang="less"></style>
