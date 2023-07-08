@@ -6,7 +6,7 @@
       <!-- 筛选区  -->
       <SubFilter />
       <!-- 测试复选框 -->
-      <XtxCheckbox v-model="isAllChecked">全部</XtxCheckbox>
+      <XtxCheckbox v-model="isAllChecked">全部</XtxCheckbox>{{ isAllChecked }}
     </div>
   </div>
 </template>

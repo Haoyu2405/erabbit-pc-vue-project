@@ -5,14 +5,12 @@
       <SubBread />
       <!-- 筛选区  -->
       <SubFilter />
-      <!-- 测试复选框 -->
-      <XtxCheckbox v-model="isAllChecked">全部</XtxCheckbox>
+      <!--  -->
     </div>
-  </div>
+</div>
 </template>
 
 <script>
-import { ref } from 'vue'
 import SubBread from './components/sub-bread.vue'
 import SubFilter from './components/sub-filter.vue'
 export default {
@@ -20,10 +18,6 @@ export default {
   components: {
     SubBread,
     SubFilter
-  },
-  setup () {
-    const isAllChecked = ref(false)
-    return { isAllChecked }
   }
 }
 </script>

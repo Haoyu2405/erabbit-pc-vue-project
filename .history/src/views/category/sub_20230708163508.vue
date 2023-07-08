@@ -6,7 +6,7 @@
       <!-- 筛选区  -->
       <SubFilter />
       <!-- 测试复选框 -->
-      <XtxCheckbox v-model="isAllChecked">全部</XtxCheckbox>
+      <XtxCheckbox v-model="isAllChecked">全部</XtxCheckbox>{{ checked  }}
     </div>
   </div>
 </template>
@@ -21,9 +21,9 @@ export default {
     SubBread,
     SubFilter
   },
-  setup () {
+  setup(){
     const isAllChecked = ref(false)
-    return { isAllChecked }
+    return {isAllChecked}
   }
 }
 </script>
