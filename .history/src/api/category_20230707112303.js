@@ -15,16 +15,8 @@ export const findAllCategory = () => {
  * @param {String} id - 顶级类目id
  * @returns promise
  */
-export const findTopCategory = id => {
+export const findTopCategory = (id) => {
   return request('/category', 'get', { id })
 }
 
-/**
- * 获取二级类目的筛选条件
- * @param {String} id - 二级类目id
- * @returns promise
- */
-
-export const findSubCategoryFilter = id => {
-  return request('/category/sub/filter', 'get', { id })
-}
+export const findSubCategory  = (id) => {}

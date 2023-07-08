@@ -20,7 +20,7 @@ export const findTopCategory = id => {
 }
 
 /**
- * 获取二级类目的筛选条件
+ * 获取顶级类目信息（children属性就是各个子分类）
  * @param {String} id - 二级类目id
  * @returns promise
  */

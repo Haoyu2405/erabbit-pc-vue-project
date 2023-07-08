@@ -3,8 +3,6 @@
     <div class="container">
       <!-- 面包屑 -->
       <SubBread />
-      <!-- 筛选区  -->
-      <SubFilter />
     </div>
 </div>
 </template>
@@ -15,8 +13,7 @@ import SubFilter from './components/sub-filter.vue'
 export default {
   name: 'SubCategory',
   components: {
-    SubBread,
-    SubFilter
+    SubBread
   }
 }
 </script>

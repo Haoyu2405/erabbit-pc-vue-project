@@ -3,8 +3,6 @@
     <div class="container">
       <!-- 面包屑 -->
       <SubBread />
-      <!-- 筛选区  -->
-      <SubFilter />
     </div>
 </div>
 </template>
@@ -16,7 +14,7 @@ export default {
   name: 'SubCategory',
   components: {
     SubBread,
-    SubFilter
+    
   }
 }
 </script>
