@@ -31,10 +31,4 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
-.goods-list {
-  background: #fff;
-  padding: 0 25px;
-  margin-top: 25px;
-}
-</style>
+<style scoped lang="less"></style>
