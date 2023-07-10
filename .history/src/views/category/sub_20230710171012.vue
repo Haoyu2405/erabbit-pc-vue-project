@@ -102,7 +102,7 @@ export default {
     const filterChange = filterParams => {
       finished.value = false
       // 合并请求参数
-      reqParams = { ...reqParams, ...filterParams }
+      reqParams = { ...reqParams, ...sortParams }
       // 重置页码
       reqParams.page = 1
       goodsList.value = []

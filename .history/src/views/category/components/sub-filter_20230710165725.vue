@@ -95,11 +95,6 @@ export default {
           })
         }
       })
-
-      // 如果没有选择任何属性，就不传递attrs参数，后端会自动忽略
-      if (obj.attrs.length === 0) {
-        obj.attrs = null
-      }
       return obj
     }
 

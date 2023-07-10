@@ -81,26 +81,7 @@ export default {
     const getFilterParams = () => {
       // 参考数据:{brandId:'',attrs:[{groupName:'',propertyName:''},...]}
       const obj = { brandId: null, attrs: [] }
-      // 1.品牌
-      obj.brandId = filterData.value.selectedBrand
-      // 2.属性
-      filterData.value.saleProperties.forEach(item => {
-        if (item.selectedProp) {
-          const prop = item.properties.find(
-            prop => prop.id === item.selectedProp
-          )
-          obj.attrs.push({
-            groupName: item.name,
-            propertyName: prop.name
-          })
-        }
-      })
-
-      // 如果没有选择任何属性，就不传递attrs参数，后端会自动忽略
-      if (obj.attrs.length === 0) {
-        obj.attrs = null
-      }
-      return obj
+      
     }
 
     // 1.记录选择的品牌
@@ -109,7 +90,6 @@ export default {
         return
       }
       filterData.value.selectedBrand = brandId
-      emit('filter-change', getFilterParams())
     }
 
     // 2.记录选择的属性
@@ -118,7 +98,6 @@ export default {
         return
       }
       item.selectedProp = propId
-      emit('filter-change', getFilterParams())
     }
 
     return {

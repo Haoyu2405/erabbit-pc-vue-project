@@ -95,11 +95,6 @@ export default {
           })
         }
       })
-
-      // 如果没有选择任何属性，就不传递attrs参数，后端会自动忽略
-      if (obj.attrs.length === 0) {
-        obj.attrs = null
-      }
       return obj
     }
 
@@ -109,7 +104,6 @@ export default {
         return
       }
       filterData.value.selectedBrand = brandId
-      emit('filter-change', getFilterParams())
     }
 
     // 2.记录选择的属性
@@ -118,7 +112,6 @@ export default {
         return
       }
       item.selectedProp = propId
-      emit('filter-change', getFilterParams())
     }
 
     return {

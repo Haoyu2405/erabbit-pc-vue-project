@@ -100,9 +100,9 @@ export default {
 
     // 2.更改筛选组件的筛选数据，重新请求
     const filterChange = filterParams => {
-      finished.value = false
+       finished.value = false
       // 合并请求参数
-      reqParams = { ...reqParams, ...filterParams }
+      reqParams = { ...reqParams, ...sortParams }
       // 重置页码
       reqParams.page = 1
       goodsList.value = []
