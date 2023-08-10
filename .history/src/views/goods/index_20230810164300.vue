@@ -19,7 +19,7 @@
           <GoodsSales />
         </div>
         <div class="spec">
-          <GoodsName :goods="goods"/>
+          <
         </div>
       </div>
       <!-- 商品推荐 -->

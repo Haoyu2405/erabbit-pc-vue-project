@@ -18,9 +18,7 @@
           <GoodsImage :images="goods.mainPictures" />
           <GoodsSales />
         </div>
-        <div class="spec">
-          <GoodsName :goods="goods"/>
-        </div>
+        <div class="spec"></div>
       </div>
       <!-- 商品推荐 -->
       <GoodsRelevant />
