@@ -7,7 +7,7 @@
       :style="[{ backgroundImage: `url(${images[currIndex]})` }, largePosition]"
     ></div>
     <!-- 中图 -->
-    <div class="middle" ref="target">
+    <div class="middle" t>
       <img :src="images[currIndex]" alt="" />
       <!-- 遮罩层 -->
       <div v-show="show" class="layer" :style="layerPosition"></div>
@@ -39,7 +39,6 @@ export default {
     // 当前选中的图片索引
     const currIndex = ref(0)
 
-    // useMouseInElement绑定的对象
     const target = ref(null)
 
     // 是否显示遮罩和大图
@@ -56,7 +55,7 @@ export default {
     })
 
     // 使用基于useMouseInElement得到基于元素左上角的坐标以及是否离开元素的数据
-    const { elementX, elementY, isOutside } = useMouseInElement(target)
+    const { elementX, elementY, isOutside } = useMouseInElement()
     watch([elementX, elementY, isOutside], () => {
       // 根据得到的数据计算出遮罩的坐标和是否显示数据
       show.value = !isOutside.value
@@ -88,7 +87,7 @@ export default {
       largePosition.backgroundPositionY = -position.y * 2 + 'px'
     })
 
-    return { currIndex, show, layerPosition, largePosition, target }
+    return { currIndex, show, layerPosition, largePosition }
   }
 }
 </script>

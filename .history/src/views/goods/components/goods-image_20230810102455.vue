@@ -39,7 +39,6 @@ export default {
     // 当前选中的图片索引
     const currIndex = ref(0)
 
-    // useMouseInElement绑定的对象
     const target = ref(null)
 
     // 是否显示遮罩和大图
