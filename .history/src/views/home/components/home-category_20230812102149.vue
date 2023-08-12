@@ -36,7 +36,7 @@
         <small>根据您的购买或浏览记录推荐</small>
       </h4>
       <!-- 商品 -->
-      <ul v-if="currCategory?.goods">
+      <ul v-if="currCategory？.goods">
         <li v-for="item in currCategory.goods" :key="item.id">
           <RouterLink to="/">
             <img v-lazy="item.picture" alt="" />
