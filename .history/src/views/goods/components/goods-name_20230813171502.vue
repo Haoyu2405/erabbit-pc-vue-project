@@ -12,7 +12,7 @@
     </dl>
     <dl>
       <dt>配送</dt>
-      <dd>至 <XtxCity /></dd>
+      <dd>至 <Xtx</dd>
     </dl>
     <dl>
       <dt>服务</dt>
