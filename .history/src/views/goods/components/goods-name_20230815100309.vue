@@ -54,14 +54,8 @@ export default {
         fullLocation.value = defaultAddr.fullLocation
       }
     }
-    // 监听地址变化
-    const changeCity = result => {
-      provinceCode.value = result.provinceCode
-      cityCode.value = result.cityCode
-      countryCode.value = result.countryCode
-      fullLocation.value = result.fullLocation
-    }
-    return { fullLocation, changeCity }
+    
+    return { fullLocation }
   }
 }
 </script>

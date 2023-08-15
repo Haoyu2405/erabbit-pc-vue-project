@@ -50,13 +50,13 @@ export default {
         allCityData.value = data
         loading.value = false
       })
+    }
+    const onHide = () => {
+      visible.value = false
       // 清空省市区数据
       for (const key in changeResult) {
         changeResult[key] = ''
       }
-    }
-    const onHide = () => {
-      visible.value = false
     }
 
     // 监听鼠标点击城市选择框以外区域
@@ -76,7 +76,9 @@ export default {
       // 可能是城市
       if (changeResult.provinceCode) {
         // 根据省份code获取城市列表
-        list = list.find(p => p.code === changeResult.provinceCode).areaList
+        list = list.find(
+          p => p.code === changeResult.provinceCode
+        ).areaList
       }
       // 可能是区县
       if (changeResult.cityCode) {
@@ -121,15 +123,7 @@ export default {
       }
     }
 
-    return {
-      visible,
-      target,
-      onToggle,
-      allCityData,
-      loading,
-      currList,
-      onChangeItem
-    }
+    return { visible, target, onToggle, allCityData, loading, currList, onChangeItem }
   }
 }
 // 获取城市数据

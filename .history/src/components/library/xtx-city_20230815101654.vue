@@ -114,6 +114,7 @@ export default {
         changeResult.countryName = item.name
         // 拼接完整地址
         changeResult.fullLocation = `${changeResult.provinceName} ${changeResult.cityName} ${changeResult.countryName}`
+        fullLocation.value = changeResult.fullLocation
         // 隐藏城市列表
         onHide()
         // 触发change事件

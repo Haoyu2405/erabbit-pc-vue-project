@@ -55,7 +55,7 @@ export default {
       }
     }
     // 监听地址变化
-    const changeCity = result => {
+    const changeCity = (result) => {
       provinceCode.value = result.provinceCode
       cityCode.value = result.cityCode
       countryCode.value = result.countryCode

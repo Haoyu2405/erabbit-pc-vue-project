@@ -50,10 +50,7 @@ export default {
         allCityData.value = data
         loading.value = false
       })
-      // 清空省市区数据
-      for (const key in changeResult) {
-        changeResult[key] = ''
-      }
+      // 清空省市区数据 for (const key in changeResult) { changeResult[key] = '' }
     }
     const onHide = () => {
       visible.value = false

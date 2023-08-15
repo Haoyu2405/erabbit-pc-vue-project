@@ -50,13 +50,13 @@ export default {
         allCityData.value = data
         loading.value = false
       })
+    }
+    const onHide = () => {
+      visible.value = false
       // 清空省市区数据
       for (const key in changeResult) {
         changeResult[key] = ''
       }
-    }
-    const onHide = () => {
-      visible.value = false
     }
 
     // 监听鼠标点击城市选择框以外区域
@@ -76,12 +76,14 @@ export default {
       // 可能是城市
       if (changeResult.provinceCode) {
         // 根据省份code获取城市列表
-        list = list.find(p => p.code === changeResult.provinceCode).areaList
+        list = list.find(
+          item => item.code === changeResult.provinceCode
+        ).areaList
       }
       // 可能是区县
       if (changeResult.cityCode) {
         // 根据城市code获取区县列表
-        list = list.find(c => c.code === changeResult.cityCode).areaList
+        list = list.find(item => item.code === changeResult.cityCode).areaList
       }
       return list
     })
@@ -100,15 +102,15 @@ export default {
     // 省市区点击事件
     const onChangeItem = item => {
       // 判断点击的是省市区
-      if (item.level === 0) {
+      if (item.level === 1) {
         // 点击的是省份
         changeResult.provinceCode = item.code
         changeResult.provinceName = item.name
-      } else if (item.level === 1) {
+      } else if (item.level === 2) {
         // 点击的是城市
         changeResult.cityCode = item.code
         changeResult.cityName = item.name
-      } else if (item.level === 2) {
+      } else if (item.level === 3) {
         // 点击的是区县
         changeResult.countryCode = item.code
         changeResult.countryName = item.name
@@ -121,15 +123,7 @@ export default {
       }
     }
 
-    return {
-      visible,
-      target,
-      onToggle,
-      allCityData,
-      loading,
-      currList,
-      onChangeItem
-    }
+    return { visible, target, onToggle, allCityData, loading, currList, onChangeItem }
   }
 }
 // 获取城市数据

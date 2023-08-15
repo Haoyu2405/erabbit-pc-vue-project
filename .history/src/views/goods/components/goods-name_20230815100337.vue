@@ -55,13 +55,8 @@ export default {
       }
     }
     // 监听地址变化
-    const changeCity = result => {
-      provinceCode.value = result.provinceCode
-      cityCode.value = result.cityCode
-      countryCode.value = result.countryCode
-      fullLocation.value = result.fullLocation
-    }
-    return { fullLocation, changeCity }
+    const changeCity = ()
+    return { fullLocation }
   }
 }
 </script>

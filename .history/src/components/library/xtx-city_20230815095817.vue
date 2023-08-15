@@ -8,13 +8,9 @@
     <div class="option" v-if="visible">
       <div v-if="loading" class="loading"></div>
       <template v-else>
-        <span
-          class="ellipsis"
-          @click="onChangeItem(item)"
-          v-for="item in currList"
-          :key="item.code"
-          >{{ item.name }}</span
-        >
+        <span class="ellipsis" v-for="item in currList" :key="item.code">{{
+          item.name
+        }}</span>
       </template>
     </div>
   </div>
@@ -50,13 +46,13 @@ export default {
         allCityData.value = data
         loading.value = false
       })
+    }
+    const onHide = () => {
+      visible.value = false
       // 清空省市区数据
       for (const key in changeResult) {
         changeResult[key] = ''
       }
-    }
-    const onHide = () => {
-      visible.value = false
     }
 
     // 监听鼠标点击城市选择框以外区域
@@ -72,17 +68,8 @@ export default {
     // 定义计算属性
     const currList = computed(() => {
       // 默认省份
-      let list = allCityData.value
-      // 可能是城市
-      if (changeResult.provinceCode) {
-        // 根据省份code获取城市列表
-        list = list.find(p => p.code === changeResult.provinceCode).areaList
-      }
-      // 可能是区县
-      if (changeResult.cityCode) {
-        // 根据城市code获取区县列表
-        list = list.find(c => c.code === changeResult.cityCode).areaList
-      }
+      const list = allCityData.value
+      // 可能是城市2
       return list
     })
 
@@ -100,19 +87,18 @@ export default {
     // 省市区点击事件
     const onChangeItem = item => {
       // 判断点击的是省市区
-      if (item.level === 0) {
+      if (item.level === 1) {
         // 点击的是省份
         changeResult.provinceCode = item.code
         changeResult.provinceName = item.name
-      } else if (item.level === 1) {
+      } else if (item.level === 2) {
         // 点击的是城市
         changeResult.cityCode = item.code
         changeResult.cityName = item.name
-      } else if (item.level === 2) {
+      } else if (item.level === 3) {
         // 点击的是区县
         changeResult.countryCode = item.code
         changeResult.countryName = item.name
-        // 拼接完整地址
         changeResult.fullLocation = `${changeResult.provinceName} ${changeResult.cityName} ${changeResult.countryName}`
         // 隐藏城市列表
         onHide()
@@ -121,15 +107,7 @@ export default {
       }
     }
 
-    return {
-      visible,
-      target,
-      onToggle,
-      allCityData,
-      loading,
-      currList,
-      onChangeItem
-    }
+    return { visible, target, onToggle, allCityData, loading, currList }
   }
 }
 // 获取城市数据
