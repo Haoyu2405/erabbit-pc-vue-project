@@ -21,7 +21,7 @@
         <div class="spec">
           <GoodsName :goods="goods" />
           <!-- sku组件 -->
-          <GoodsSku :goods="goods" />
+          <GoodsSku :goods="g" />
         </div>
       </div>
       <!-- 商品推荐 -->

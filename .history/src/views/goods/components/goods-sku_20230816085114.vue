@@ -4,20 +4,28 @@
       <dt>{{ item.name }}</dt>
       <dd>
         <template v-for="val in item.values" :key="val.name">
-          <img
-            @click="onClickSpecs(item, val)"
-            :class="{ selected: val.selected }"
-            v-if="val.picture"
-            :src="val.picture"
-            :title="val.name"
+          <img v-if="val.picture"
+            class="selected"
+            :src="https://yanxuan-item.nosdn.127.net/d77c1f9347d06565a05e606bd4f949e0.png"
+            alt=""
           />
-          <span
-            :class="{ selected: val.selected }"
-            @click="onClickSpecs(item, val)"
-            v-else
-            >{{ val.name }}</span
-          >
+          <span>30英寸</span>
         </template>
+      </dd>
+    </dl>
+    <dl>
+      <dt>尺寸</dt>
+      <dd>
+        <span class="disabled">10英寸</span>
+        <span class="selected">20英寸</span>
+        <span>30英寸</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>版本</dt>
+      <dd>
+        <span>美版</span>
+        <span>港版</span>
       </dd>
     </dl>
   </div>
@@ -30,20 +38,6 @@ export default {
       type: Object,
       default: () => ({})
     }
-  },
-  setup () {
-    // 绑定鼠标点击事件，切换选中状态与取消选中状态 约定选中状态：selected
-    const onClickSpecs = (item, val) => {
-      if (val.selected) {
-        val.selected = false
-      } else {
-        item.values.forEach(itemValue => {
-          itemValue.selected = false
-        })
-        val.selected = true
-      }
-    }
-    return { onClickSpecs }
   }
 }
 </script>

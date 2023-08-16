@@ -6,17 +6,11 @@
         <template v-for="val in item.values" :key="val.name">
           <img
             @click="onClickSpecs(item, val)"
-            :class="{ selected: val.selected }"
             v-if="val.picture"
             :src="val.picture"
             :title="val.name"
           />
-          <span
-            :class="{ selected: val.selected }"
-            @click="onClickSpecs(item, val)"
-            v-else
-            >{{ val.name }}</span
-          >
+          <span @click="onClickSpecs(item, val)" v-else>{{ val.name }}</span>
         </template>
       </dd>
     </dl>
@@ -43,7 +37,7 @@ export default {
         val.selected = true
       }
     }
-    return { onClickSpecs }
+    return { }
   }
 }
 </script>

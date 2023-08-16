@@ -4,19 +4,8 @@
       <dt>{{ item.name }}</dt>
       <dd>
         <template v-for="val in item.values" :key="val.name">
-          <img
-            @click="onClickSpecs(item, val)"
-            :class="{ selected: val.selected }"
-            v-if="val.picture"
-            :src="val.picture"
-            :title="val.name"
-          />
-          <span
-            :class="{ selected: val.selected }"
-            @click="onClickSpecs(item, val)"
-            v-else
-            >{{ val.name }}</span
-          >
+          <img @click="onClickSpecs(item, val)" v-if="val.picture" :src="val.picture" :title="val.name" />
+          <span @click="onClickSpecs(item, val)" v-else>{{ val.name }}</span>
         </template>
       </dd>
     </dl>
@@ -32,18 +21,11 @@ export default {
     }
   },
   setup () {
-    // 绑定鼠标点击事件，切换选中状态与取消选中状态 约定选中状态：selected
-    const onClickSpecs = (item, val) => {
-      if (val.selected) {
-        val.selected = false
-      } else {
-        item.values.forEach(itemValue => {
-          itemValue.selected = false
-        })
-        val.selected = true
-      }
+    // 绑定鼠标点击事件，切换选中状态与取消选中状态
+    const onClickSpecs = (item,val) => {
+      if(item.sele)
     }
-    return { onClickSpecs }
+    return {}
   }
 }
 </script>
