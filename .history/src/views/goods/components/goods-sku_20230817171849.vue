@@ -43,19 +43,15 @@ const getPathMap = skus => {
       // 遍历子集，存储到路径字典对象中
       valueArrPowerSet.forEach(valueArr => {
         // 约定key为 ['蓝色', '中国'] ===> ['蓝色★中国']
-        const key = valueArr.join(spliter)
-        // 设置路径字典对象的key-value
-        if (pathMap[key]) {
-          // 如果已经存在，就往数组中添加
-          pathMap[key].push(sku.id)
-        } else {
-          // 如果不存在，就创建一个数组
-          pathMap[key] = [sku.id]
+        const key = valueArr.join(spliter
+)
+        if (!pathMap[key]) {
+          pathMap[key] = []
         }
+        pathMap[key].push(sku)
       })
     }
   })
-  return pathMap
 }
 
 export default {

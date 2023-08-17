@@ -31,7 +31,6 @@ const getPathMap = skus => {
   // 3.根据有效的skus使用power-set算法得到子集
   // 4.根据子集往路径字典对象中存储 key-value
   const pathMap = {}
-  const spliter = '★'
   skus.forEach(sku => {
     if (sku.inventory > 0) {
       // 计算当前有库存的sku的子集
@@ -42,20 +41,15 @@ const getPathMap = skus => {
       const valueArrPowerSet = powerSet(valueArr)
       // 遍历子集，存储到路径字典对象中
       valueArrPowerSet.forEach(valueArr => {
-        // 约定key为 ['蓝色', '中国'] ===> ['蓝色★中国']
-        const key = valueArr.join(spliter)
-        // 设置路径字典对象的key-value
-        if (pathMap[key]) {
-          // 如果已经存在，就往数组中添加
-          pathMap[key].push(sku.id)
-        } else {
-          // 如果不存在，就创建一个数组
-          pathMap[key] = [sku.id]
+        // 约定key为 ['蓝色', '中国'] ===> ['']
+        const key = valueArr.join(',')
+        if (!pathMap[key]) {
+          pathMap[key] = []
         }
+        pathMap[key].push(sku)
       })
     }
   })
-  return pathMap
 }
 
 export default {

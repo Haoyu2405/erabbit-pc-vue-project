@@ -23,40 +23,7 @@
   </div>
 </template>
 <script>
-import powerSet from '@/vendor/power-set'
-// 得到一个路径字典对象
-const getPathMap = skus => {
-  // 1.得到所有skus集合， props.goods.skus
-  // 2.从所有的skus中筛选出有效的skus
-  // 3.根据有效的skus使用power-set算法得到子集
-  // 4.根据子集往路径字典对象中存储 key-value
-  const pathMap = {}
-  const spliter = '★'
-  skus.forEach(sku => {
-    if (sku.inventory > 0) {
-      // 计算当前有库存的sku的子集
-      // 例如: [1,2,3] => [[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]
-      // 可选值数组
-      const valueArr = sku.specs.map(spec => spec.valueName)
-      // 得到子集
-      const valueArrPowerSet = powerSet(valueArr)
-      // 遍历子集，存储到路径字典对象中
-      valueArrPowerSet.forEach(valueArr => {
-        // 约定key为 ['蓝色', '中国'] ===> ['蓝色★中国']
-        const key = valueArr.join(spliter)
-        // 设置路径字典对象的key-value
-        if (pathMap[key]) {
-          // 如果已经存在，就往数组中添加
-          pathMap[key].push(sku.id)
-        } else {
-          // 如果不存在，就创建一个数组
-          pathMap[key] = [sku.id]
-        }
-      })
-    }
-  })
-  return pathMap
-}
+import 
 
 export default {
   name: 'GoodsSku',
@@ -66,9 +33,7 @@ export default {
       default: () => ({})
     }
   },
-  setup (props) {
-    const pathMap = getPathMap(props.goods.skus)
-    console.log(pathMap)
+  setup () {
     // 绑定鼠标点击事件，切换选中状态与取消选中状态 约定选中状态：selected
     const onClickSpecs = (item, val) => {
       if (val.selected) {

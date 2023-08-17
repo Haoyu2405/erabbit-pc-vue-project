@@ -46,16 +46,14 @@ const getPathMap = skus => {
         const key = valueArr.join(spliter)
         // 设置路径字典对象的key-value
         if (pathMap[key]) {
-          // 如果已经存在，就往数组中添加
           pathMap[key].push(sku.id)
         } else {
-          // 如果不存在，就创建一个数组
           pathMap[key] = [sku.id]
         }
       })
     }
   })
-  return pathMap
+  retue
 }
 
 export default {
