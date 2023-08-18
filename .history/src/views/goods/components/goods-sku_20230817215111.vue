@@ -6,13 +6,13 @@
         <template v-for="val in item.values" :key="val.name">
           <img
             @click="onClickSpecs(item, val)"
-            :class="{ selected: val.selected, disabled: val.disabled }"
+            :class="{ selected: val.selected }"
             v-if="val.picture"
             :src="val.picture"
             :title="val.name"
           />
           <span
-            :class="{ selected: val.selected, disabled: val.disabled }"
+            :class="{ selected: val.selected }"
             @click="onClickSpecs(item, val)"
             v-else
             >{{ val.name }}</span
@@ -24,57 +24,27 @@
 </template>
 <script>
 import powerSet from '@/vendor/power-set'
-const spliter = '★'
-
-// 获取已选中的值数组
-const getSelectedValue = specs => {
-  const arr = []
-  specs.forEach(item => {
-    // 查找选中的按钮对象
-    const selectedVal = item.values.find(val => val.selected)
-    // 往数组追加选中的按钮对象的名字，如果按钮没选中则为undefined
-    arr.push(selectedVal ? selectedVal.name : undefined)
-  })
-  return arr
-}
-
-// 更新按钮禁用状态
-const updateDisabledStatus = (specs, pathMap) => {
-  // 约定每一个按钮的禁用状态：disabled
-  specs.forEach((item, i) => {
-    const selectedValues = getSelectedValue(specs)
-    item.values.forEach(val => {
-      // 判断当前是否选中，是选中不用判断
-      if (val.selected) return
-      // 未选中的，拿当前的值按照顺序套入选中的值数组
-      selectedValues[i] = val.name
-      // 剔除undefined数据，按照分隔符拼接key
-      const key = selectedValues.filter(value => value).join(spliter)
-      // 拿着key判断路径字典对象中是否存在数据，有可以点击，没有不能点击
-      val.disabled = !pathMap[key]
-    })
-  })
-}
-
-// 根据skus数据得到路径字典对象
+spec.forEach
+// 得到一个路径字典对象
 const getPathMap = skus => {
   // 1.得到所有skus集合， props.goods.skus
   // 2.从所有的skus中筛选出有效的skus
   // 3.根据有效的skus使用power-set算法得到子集
   // 4.根据子集往路径字典对象中存储 key-value
   const pathMap = {}
+  const spliter = '★'
   skus.forEach(sku => {
     if (sku.inventory > 0) {
       // 计算当前有库存的sku的子集
       // 例如: [1,2,3] => [[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]
       // 可选值数组
-      const valueArr = sku.specs.map(val => val.valueName)
+      const valueArr = sku.specs.map(spec => spec.valueName)
       // 得到子集
       const valueArrPowerSet = powerSet(valueArr)
       // 遍历子集，存储到路径字典对象中
-      valueArrPowerSet.forEach(arr => {
+      valueArrPowerSet.forEach(valueArr => {
         // 约定key为 ['蓝色', '中国'] ===> ['蓝色★中国']
-        const key = arr.join(spliter)
+        const key = valueArr.join(spliter)
         // 设置路径字典对象的key-value
         if (pathMap[key]) {
           // 如果已经存在，就往数组中添加
@@ -99,13 +69,9 @@ export default {
   },
   setup (props) {
     const pathMap = getPathMap(props.goods.skus)
-    // ☆组件初始化的时候,更新禁用状态
-    updateDisabledStatus(props.goods.specs, pathMap)
+    console.log(pathMap)
     // 绑定鼠标点击事件，切换选中状态与取消选中状态 约定选中状态：selected
     const onClickSpecs = (item, val) => {
-      // 如果是禁用状态不作为
-      if (val.disabled) return false
-      // 选中与取消选中逻辑
       if (val.selected) {
         val.selected = false
       } else {
@@ -114,9 +80,6 @@ export default {
         })
         val.selected = true
       }
-      // ☆点击按钮时，更新按钮禁用状态
-      console.log(getSelectedValue(props.goods.specs))
-      updateDisabledStatus(props.goods.specs, pathMap)
     }
     return { onClickSpecs }
   }

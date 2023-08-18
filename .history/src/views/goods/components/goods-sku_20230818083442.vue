@@ -26,14 +26,14 @@
 import powerSet from '@/vendor/power-set'
 const spliter = '★'
 
-// 获取已选中的值数组
+// 按钮的名字数组
 const getSelectedValue = specs => {
   const arr = []
   specs.forEach(item => {
     // 查找选中的按钮对象
-    const selectedVal = item.values.find(val => val.selected)
+    const selectedBtn = item.values.find(btn => btn.selected)
     // 往数组追加选中的按钮对象的名字，如果按钮没选中则为undefined
-    arr.push(selectedVal ? selectedVal.name : undefined)
+    arr.push(selectedBtn ? selectedBtn.name : undefined)
   })
   return arr
 }
@@ -72,9 +72,9 @@ const getPathMap = skus => {
       // 得到子集
       const valueArrPowerSet = powerSet(valueArr)
       // 遍历子集，存储到路径字典对象中
-      valueArrPowerSet.forEach(arr => {
+      valueArrPowerSet.forEach(valueArr => {
         // 约定key为 ['蓝色', '中国'] ===> ['蓝色★中国']
-        const key = arr.join(spliter)
+        const key = valueArr.join(spliter)
         // 设置路径字典对象的key-value
         if (pathMap[key]) {
           // 如果已经存在，就往数组中添加

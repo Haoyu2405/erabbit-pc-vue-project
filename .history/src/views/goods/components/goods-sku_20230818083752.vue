@@ -27,13 +27,14 @@ import powerSet from '@/vendor/power-set'
 const spliter = '★'
 
 // 获取已选中的值数组
+
 const getSelectedValue = specs => {
   const arr = []
   specs.forEach(item => {
     // 查找选中的按钮对象
-    const selectedVal = item.values.find(val => val.selected)
+    const selectedBtn = item.values.find(btn => btn.selected)
     // 往数组追加选中的按钮对象的名字，如果按钮没选中则为undefined
-    arr.push(selectedVal ? selectedVal.name : undefined)
+    arr.push(selectedBtn ? selectedBtn.name : undefined)
   })
   return arr
 }
