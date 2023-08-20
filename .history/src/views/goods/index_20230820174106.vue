@@ -25,10 +25,6 @@
           <GoodsSku :goods="goods" @change="changeSku" />
           <!-- 数量选择组件 -->
           <XtxNumbox
-            v-model="count"
-            :max="goods.inventory"
-            label="数量"
-          />
         </div>
       </div>
       <!-- 商品推荐 -->
@@ -72,10 +68,7 @@ export default {
       }
     }
 
-    // 选择的数量
-    const count = ref(1)
-
-    return { goods, changeSku, count }
+    return { goods, changeSku }
   }
 }
 // 获取商品详情

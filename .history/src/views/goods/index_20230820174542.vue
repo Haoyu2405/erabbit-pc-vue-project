@@ -24,11 +24,7 @@
           <!-- skuId="300284208"测试默认选中 -->
           <GoodsSku :goods="goods" @change="changeSku" />
           <!-- 数量选择组件 -->
-          <XtxNumbox
-            v-model="count"
-            :max="goods.inventory"
-            label="数量"
-          />
+          <XtxNumbox v/>
         </div>
       </div>
       <!-- 商品推荐 -->

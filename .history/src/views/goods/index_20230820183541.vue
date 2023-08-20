@@ -26,8 +26,7 @@
           <!-- 数量选择组件 -->
           <XtxNumbox
             v-model="count"
-            :max="goods.inventory"
-            label="数量"
+            :max="goods.value.inventory"
           />
         </div>
       </div>
