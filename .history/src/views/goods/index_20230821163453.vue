@@ -61,14 +61,7 @@ import { findGoods } from '@/api/product.js'
 import { ref, watch, nextTick } from 'vue'
 export default {
   name: 'XtxGoodsPage',
-  components: {
-    GoodsRelevant,
-    GoodsImage,
-    GoodsSales,
-    GoodsName,
-    GoodsSku,
-    GoodsTabs
-  },
+  components: { GoodsRelevant, GoodsImage, GoodsSales, GoodsName, GoodsSku },
   setup() {
     const goods = useGoods()
     const changeSku = sku => {
@@ -138,7 +131,10 @@ const useGoods = () => {
     min-height: 1000px;
   }
 }
-
+.goods-tabs {
+  min-height: 600px;
+  background: #fff;
+}
 .goods-warn {
   min-height: 600px;
   background: #fff;

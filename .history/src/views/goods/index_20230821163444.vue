@@ -37,7 +37,7 @@
       <div class="goods-footer">
         <div class="goods-article">
           <!-- 商品+评价 -->
-          <GoodsTabs />
+          <GoodsTabs 
           <!-- 注意事项 -->
           <div class="goods-warn"></div>
         </div>
@@ -55,20 +55,12 @@ import GoodsImage from './components/goods-image'
 import GoodsSales from './components/goods-sales'
 import GoodsName from './components/goods-name'
 import GoodsSku from './components/goods-sku'
-import GoodsTabs from './components/goods-tabs'
 import { useRoute } from 'vue-router'
 import { findGoods } from '@/api/product.js'
 import { ref, watch, nextTick } from 'vue'
 export default {
   name: 'XtxGoodsPage',
-  components: {
-    GoodsRelevant,
-    GoodsImage,
-    GoodsSales,
-    GoodsName,
-    GoodsSku,
-    GoodsTabs
-  },
+  components: { GoodsRelevant, GoodsImage, GoodsSales, GoodsName, GoodsSku },
   setup() {
     const goods = useGoods()
     const changeSku = sku => {
@@ -138,7 +130,10 @@ const useGoods = () => {
     min-height: 1000px;
   }
 }
-
+.goods-tabs {
+  min-height: 600px;
+  background: #fff;
+}
 .goods-warn {
   min-height: 600px;
   background: #fff;
