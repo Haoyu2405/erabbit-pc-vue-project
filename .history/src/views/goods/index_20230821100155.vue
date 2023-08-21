@@ -24,11 +24,13 @@
           <!-- skuId="300284208"测试默认选中 -->
           <GoodsSku :goods="goods" @change="changeSku" />
           <!-- 数量选择组件 -->
-          <XtxNumbox v-model="count" :max="goods.inventory" label="数量" />
+          <XtxNumbox
+            v-model="count"
+            :max="goods.inventory"
+            label="数量"
+          />
           <!-- 按钮组件 -->
-          <XtxButton type="primary" style="margin: 20px 0 0 5px"
-            >加入购物车</XtxButton
-          >
+          <XtxButton type="primary" sizer>加入购物车</XtxButton>
         </div>
       </div>
       <!-- 商品推荐 -->
