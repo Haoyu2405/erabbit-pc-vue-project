@@ -211,7 +211,6 @@ export default {
     }
   }
 }
-
 // 轮播商品
 .slider {
   display: flex;

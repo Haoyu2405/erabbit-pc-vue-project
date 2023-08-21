@@ -36,7 +36,7 @@ export default {
       border-right: 4px solid @xtxColor;
       box-sizing: border-box;
       position: relative;
-      transform: rotate(45deg);
+      // transform: rotate(45deg);
       &::before {
         content: '';
         width: 10px;
