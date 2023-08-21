@@ -35,6 +35,7 @@ export default {
         // slice()方法不会改变原数组，而是返回一个新数组
         sliders.value.push(data.result.slice(i * pageSize, (i + 1) * pageSize))
       }
+      console.log(sliders)
     })
     return {
       sliders

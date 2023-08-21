@@ -35,6 +35,7 @@ export default {
         // slice()方法不会改变原数组，而是返回一个新数组
         sliders.value.push(data.result.slice(i * pageSize, (i + 1) * pageSize))
       }
+      console.log(sliders)
     })
     return {
       sliders
@@ -77,27 +78,8 @@ export default {
     }
   }
 }
-// 深度选择器覆盖第三方组件样式 vue2-> ::v-deep vue3-> :deep(.xxx)
-:deep(.xtx-carousel) {
-  height: 380px;
-  .carousel {
-    &-indicator {
-      bottom: 30px;
-      span {
-        &.active {
-          background: @xtxColor;
-        }
-      }
-    }
-    &-btn {
-      top: 110px;
-      opacity: 1;
-      background: rgba(0, 0, 0, 0);
-      color: #ddd;
-      i {
-        font-size: 30px;
-      }
-    }
-  }
-}
+:deep(.xtx-carousel) { height: 380px; .carousel { &-indicator { bottom: 30px;
+span { &.active { background: @xtxColor; } } } &-btn { top: 110px; opacity: 1;
+background: rgba(0,0,0,0); color: #ddd; i { font-size: 30px; } } } }
+
 </style>

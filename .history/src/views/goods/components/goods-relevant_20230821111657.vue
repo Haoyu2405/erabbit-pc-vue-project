@@ -5,7 +5,6 @@
       <span class="title">{{ goodsId ? '同类商品推荐' : '猜你喜欢' }}</span>
     </div>
     <!-- 此处使用改造后的xtx-carousel.vue -->
-    <xtx-carousel :sliders="sliders" />
   </div>
 </template>
 
@@ -26,7 +25,7 @@ export default {
     // sliders的结构：[[], [], []]
     const sliders = ref([])
     findRelevantGoods({ id: props.goodsId }).then(data => {
-      // data.result是商品列表数组，里面有16条数据
+      // data.result是一个数组，里面有16条数据
       // 有4页数据，每页4条数据
       const pageSize = 4
       const pageCount = Math.ceil(data.result.length / pageSize)
@@ -35,6 +34,7 @@ export default {
         // slice()方法不会改变原数组，而是返回一个新数组
         sliders.value.push(data.result.slice(i * pageSize, (i + 1) * pageSize))
       }
+      console.log(sliders)
     })
     return {
       sliders
@@ -73,29 +73,6 @@ export default {
         left: 0;
         top: 2px;
         background: lighten(@xtxColor, 40%);
-      }
-    }
-  }
-}
-// 深度选择器覆盖第三方组件样式 vue2-> ::v-deep vue3-> :deep(.xxx)
-:deep(.xtx-carousel) {
-  height: 380px;
-  .carousel {
-    &-indicator {
-      bottom: 30px;
-      span {
-        &.active {
-          background: @xtxColor;
-        }
-      }
-    }
-    &-btn {
-      top: 110px;
-      opacity: 1;
-      background: rgba(0, 0, 0, 0);
-      color: #ddd;
-      i {
-        font-size: 30px;
       }
     }
   }
