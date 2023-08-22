@@ -42,10 +42,7 @@
           <div class="goods-warn"></div>
         </div>
         <!-- 24热榜+周热销榜 -->
-        <div class="goods-aside">
-          <GoodsHot />
-          <GoodsHot :type="2"/>
-        </div>
+        <div class="goods-aside"></div>
       </div>
     </div>
   </div>
@@ -71,8 +68,7 @@ export default {
     GoodsSales,
     GoodsName,
     GoodsSku,
-    GoodsTabs,
-    GoodsHot
+    GoodsTabs
   },
   setup() {
     const goods = useGoods()

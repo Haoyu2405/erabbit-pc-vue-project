@@ -41,11 +41,8 @@
           <!-- 注意事项 -->
           <div class="goods-warn"></div>
         </div>
-        <!-- 24热榜+周热销榜 -->
-        <div class="goods-aside">
-          <GoodsHot />
-          <GoodsHot :type="2"/>
-        </div>
+        <!-- 24热榜+ -->
+        <div class="goods-aside"></div>
       </div>
     </div>
   </div>
@@ -59,7 +56,6 @@ import GoodsSales from './components/goods-sales'
 import GoodsName from './components/goods-name'
 import GoodsSku from './components/goods-sku'
 import GoodsTabs from './components/goods-tabs'
-import GoodsHot from './components/goods-hot'
 import { useRoute } from 'vue-router'
 import { findGoods } from '@/api/product.js'
 import { ref, watch, nextTick } from 'vue'
@@ -71,8 +67,7 @@ export default {
     GoodsSales,
     GoodsName,
     GoodsSku,
-    GoodsTabs,
-    GoodsHot
+    GoodsTabs
   },
   setup() {
     const goods = useGoods()

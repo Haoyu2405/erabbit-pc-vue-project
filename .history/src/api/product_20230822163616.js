@@ -23,7 +23,7 @@ export const findRelevantGoods = ({ id, limit = 16 }) => {
  * 获取热销榜数据
  * @param {String} id 商品id
  * @param {Integer} limit 商品数量
- * @param {Integer} type 热销类型，1为热销榜，2为周榜，3为总榜, 默认为1
+ * @param {Integer} type 商品类型，1为热销榜，2为周榜，3为 榜
  * @returns
  */
 export const findGoodsHot = ({ id, limit = 3, type = 1 }) => {

@@ -43,8 +43,7 @@
         </div>
         <!-- 24热榜+周热销榜 -->
         <div class="goods-aside">
-          <GoodsHot />
-          <GoodsHot :type="2"/>
+          
         </div>
       </div>
     </div>
