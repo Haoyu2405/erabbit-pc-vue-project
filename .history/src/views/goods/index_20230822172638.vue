@@ -62,7 +62,7 @@ import GoodsTabs from './components/goods-tabs'
 import GoodsHot from './components/goods-hot'
 import { useRoute } from 'vue-router'
 import { findGoods } from '@/api/product.js'
-import { ref, watch, nextTick, provide } from 'vue'
+import { ref, watch, nextTick } from 'vue'
 export default {
   name: 'XtxGoodsPage',
   components: {
@@ -85,8 +85,7 @@ export default {
       }
     }
 
-    // 提供goods数据给后代组件使用
-    provide('goods', goods)
+    // 提供goods数据给后代 
 
     // 选择的数量
     const count = ref(1)

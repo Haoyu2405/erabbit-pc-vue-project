@@ -7,13 +7,6 @@
         <span class="dd">{{ item.value }}</span>
       </li>
     </ul>
-    <!-- 图片 -->
-    <img
-      v-for="item in goods.details.pictures"
-      :key="item"
-      :src="item"
-      alt=""
-    />
   </div>
 </template>
 

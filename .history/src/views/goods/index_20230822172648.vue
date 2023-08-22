@@ -86,7 +86,7 @@ export default {
     }
 
     // 提供goods数据给后代组件使用
-    provide('goods', goods)
+    provide
 
     // 选择的数量
     const count = ref(1)
