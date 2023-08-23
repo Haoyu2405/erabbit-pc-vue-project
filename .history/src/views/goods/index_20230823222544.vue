@@ -39,12 +39,12 @@
           <!-- 商品+评价 -->
           <GoodsTabs />
           <!-- 注意事项 -->
-          <GoodsWarn />
+          <div class="goods-warn"></div>
         </div>
         <!-- 24热榜+周热销榜 -->
         <div class="goods-aside">
           <GoodsHot />
-          <GoodsHot :type="2" />
+          <GoodsHot :type="2"/>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ export default {
     GoodsSku,
     GoodsTabs,
     GoodsHot,
-    GoodsWarn
+    
   },
   setup() {
     const goods = useGoods()
