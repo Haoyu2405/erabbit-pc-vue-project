@@ -52,7 +52,7 @@
       <div class="item" v-for="item in commentList" :key="item.id">
         <div class="user">
           <img :src="item.member.avatar" alt="" />
-          <span>{{ formatNickname(item.member.nickname) }}</span>
+          <span>{{ item.member.nickname }}</span>
         </div>
         <div class="body">
           <div class="score">
@@ -73,9 +73,7 @@
           </div>
           <div class="time">
             <span>{{ item.createTime }}</span>
-            <span class="zan"
-              ><i class="iconfont icon-dianzan"></i>{{ item.praiseCount }}</span
-            >
+            <span class="zan"><i class="iconfont icon-dianzan"></i>{{item.praiseCo}}</span>
           </div>
         </div>
       </div>
@@ -160,10 +158,6 @@ export default {
     const formatSpecs = specs => {
       return specs.map(item => item.name + ':' + item.nameValue).join(' ')
     }
-    // 格式化昵称
-    const formatNickname = nickname => {
-      return nickname.substr(0, 1) + '****' + nickname.substr(-1)
-    }
     return {
       commentInfo,
       currentTagIdx,
@@ -171,8 +165,7 @@ export default {
       changeTag,
       commentList,
       changeSort,
-      formatSpecs,
-      formatNickname
+      formatSpecs
     }
   }
 }

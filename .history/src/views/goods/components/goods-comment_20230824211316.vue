@@ -52,30 +52,26 @@
       <div class="item" v-for="item in commentList" :key="item.id">
         <div class="user">
           <img :src="item.member.avatar" alt="" />
-          <span>{{ formatNickname(item.member.nickname) }}</span>
+          <span>{{ item.member.nickname }}</span>
         </div>
         <div class="body">
           <div class="score">
-            <i
-              v-for="i in item.score"
-              :key="i + 's'"
-              class="iconfont icon-wjx01"
-            ></i>
-            <i
-              v-for="i in 5 - item.score"
-              :key="i + 'k'"
-              class="iconfont icon-wjx02"
-            ></i>
-            <span class="attr">{{ formatSpecs(item.orderInfo.specs) }}</span>
+            <i v-for="i in item.score" :key="i+'s'" class="iconfont icon-wjx01"></i>
+            <i class="iconfont icon-wjx01"></i>
+            <i class="iconfont icon-wjx01"></i>
+            <i class="iconfont icon-wjx01"></i>
+            <iv-for="i in item.score" :key="i+'s'" class="iconfont icon-wjx02"></iv-for=>
+            <span class="attr">颜色：黑色 尺码：M</span>
           </div>
           <div class="text">
-            {{ item.content }}
+            网易云app上这款耳机非常不错 新人下载网易云购买这款耳机优惠大
+            而且耳机🎧确实正品 音质特别好 戴上这款耳机
+            听音乐看电影效果声音真是太棒了 无线方便 小盒自动充电
+            最主要是质量好音质棒 想要买耳机的放心拍 音效巴巴滴 老棒了
           </div>
           <div class="time">
-            <span>{{ item.createTime }}</span>
-            <span class="zan"
-              ><i class="iconfont icon-dianzan"></i>{{ item.praiseCount }}</span
-            >
+            <span>2020-10-10 10:11:22</span>
+            <span class="zan"><i class="iconfont icon-dianzan"></i>100</span>
           </div>
         </div>
       </div>
@@ -155,24 +151,13 @@ export default {
       },
       { immediate: true }
     )
-
-    // 定义数据格式方法
-    const formatSpecs = specs => {
-      return specs.map(item => item.name + ':' + item.nameValue).join(' ')
-    }
-    // 格式化昵称
-    const formatNickname = nickname => {
-      return nickname.substr(0, 1) + '****' + nickname.substr(-1)
-    }
     return {
       commentInfo,
       currentTagIdx,
       reqParams,
       changeTag,
       commentList,
-      changeSort,
-      formatSpecs,
-      formatNickname
+      changeSort
     }
   }
 }

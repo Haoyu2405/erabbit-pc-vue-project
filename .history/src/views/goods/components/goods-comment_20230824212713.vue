@@ -52,7 +52,8 @@
       <div class="item" v-for="item in commentList" :key="item.id">
         <div class="user">
           <img :src="item.member.avatar" alt="" />
-          <span>{{ formatNickname(item.member.nickname) }}</span>
+          <span>{{ formatNickname
+item.member.nickname }}</span>
         </div>
         <div class="body">
           <div class="score">
