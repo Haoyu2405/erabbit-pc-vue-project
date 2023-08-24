@@ -8,7 +8,7 @@
           ><span>人购买</span>
         </p>
         <p>
-          <span>{{ commentInfo.praisePercent }}</span
+          <span>{{ commentInfo.praiseCount }}</span
           ><span>好评率</span>
         </p>
       </div>
@@ -16,13 +16,17 @@
         <div class="dt">大家都在说：</div>
         <div class="dd">
           <a
-            v-for="(item, i) in commentInfo.tags"
+            v-for="item in commentInfo.tags"
             :key="item.title"
             href="javascript:;"
-            @click="currentTagIdx = i"
-            :class="{ active: currentTagIdx === i }"
+            class="active"
             >{{ item.title }}({{ item.tagCount }})</a
           >
+          <a href="javascript:;">好吃（1000）</a>
+          <a href="javascript:;">便宜（1000）</a>
+          <a href="javascript:;">很好（1000）</a>
+          <a href="javascript:;">再来一次（1000）</a>
+          <a href="javascript:;">快递棒（1000）</a>
         </div>
       </div>
     </div>
@@ -57,11 +61,8 @@ export default {
         tagCount: data.result.evaluateCount
       })
       commentInfo.value = data.result
-      console.log(data.result)
     })
-    // 选中标签
-    const currentTagIdx = ref(0)
-    return { commentInfo, currentTagIdx }
+    return { commentInfo }
   }
 }
 </script>

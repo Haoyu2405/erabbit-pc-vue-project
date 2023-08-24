@@ -16,11 +16,11 @@
         <div class="dt">大家都在说：</div>
         <div class="dd">
           <a
-            v-for="(item, i) in commentInfo.tags"
+            v-for="(item,i) in commentInfo.tags"
             :key="item.title"
             href="javascript:;"
             @click="currentTagIdx = i"
-            :class="{ active: currentTagIdx === i }"
+            :class="{active:currentTagIdx === i}"
             >{{ item.title }}({{ item.tagCount }})</a
           >
         </div>

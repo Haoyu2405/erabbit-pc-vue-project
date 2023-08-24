@@ -16,11 +16,10 @@
         <div class="dt">大家都在说：</div>
         <div class="dd">
           <a
-            v-for="(item, i) in commentInfo.tags"
+            v-for="item in commentInfo.tags"
             :key="item.title"
             href="javascript:;"
-            @click="currentTagIdx = i"
-            :class="{ active: currentTagIdx === i }"
+            class="active"
             >{{ item.title }}({{ item.tagCount }})</a
           >
         </div>
@@ -60,8 +59,8 @@ export default {
       console.log(data.result)
     })
     // 选中标签
-    const currentTagIdx = ref(0)
-    return { commentInfo, currentTagIdx }
+    const curr
+    return { commentInfo }
   }
 }
 </script>

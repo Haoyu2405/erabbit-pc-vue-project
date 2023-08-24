@@ -35,7 +35,8 @@ export const findGoodsHot = ({ id, limit = 3, type = 1 }) => {
  * @param {String} id - 商品ID
  */
 export const findGoodsCommentInfo = id => {
-  return request(`/goods/${id}/evaluate`, 'get')
+  return request(`/goods/${id}/evaluate`)
   // axios遇上http/https开头的字符串，会自动忽略baseURL
   // return request('https://mock.boxuegu.com/mock/1175/goods/${id}/evaluate', 'get')
 }
+
