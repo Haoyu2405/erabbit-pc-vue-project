@@ -128,8 +128,8 @@ export default {
 
     // 修改排序
     const changeSort = sortField => {
-      // 页码重置为1
-      reqParams.page = 1
+      // 页码重置为1 reqParams.page = 1
+
       reqParams.sortField = sortField
     }
     // 准备筛选条件数据

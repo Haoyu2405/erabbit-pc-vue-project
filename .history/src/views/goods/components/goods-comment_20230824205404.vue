@@ -122,16 +122,12 @@ export default {
         reqParams.hasPicture = null
         reqParams.tag = tag.title
       }
-      // 页码重置为1
+      // 页码重置为1 
       reqParams.page = 1
-    }
 
-    // 修改排序
-    const changeSort = sortField => {
-      // 页码重置为1
-      reqParams.page = 1
-      reqParams.sortField = sortField
     }
+    
+    //  
     // 准备筛选条件数据
     const reqParams = reactive({
       page: 1,
@@ -147,6 +143,7 @@ export default {
     watch(
       reqParams,
       () => {
+       
         // 重新请求数据
         findGoodsCommentList(goods.id, reqParams).then(data => {
           commentList.value = data.result.items
@@ -155,14 +152,7 @@ export default {
       },
       { immediate: true }
     )
-    return {
-      commentInfo,
-      currentTagIdx,
-      reqParams,
-      changeTag,
-      commentList,
-      changeSort
-    }
+    return { commentInfo, currentTagIdx, reqParams, changeTag, commentList }
   }
 }
 </script>
