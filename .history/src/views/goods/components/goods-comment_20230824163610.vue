@@ -83,8 +83,8 @@
 </template>
 
 <script>
-import { findGoodsCommentInfo, findGoodsCommentList } from '@/api/product'
-import { inject, ref, reactive, watch } from 'vue'
+import { findGoodsCommentInfo } from '@/api/product'
+import { inject, ref, reactive } from 'vue'
 export default {
   name: 'GoodsComment',
   setup () {
@@ -96,7 +96,7 @@ export default {
       data.result.tags.unshift({
         title: '有图',
         tagCount: data.result.hasPictureCount,
-        type: 'img'
+        type: 'hasPicture'
       })
       data.result.tags.unshift({
         title: '全部评价',
@@ -109,19 +109,7 @@ export default {
     const currentTagIdx = ref(0)
     const changeTag = i => {
       currentTagIdx.value = i
-      // 点击tag的时候修改筛选条件
-      const tag = commentInfo.value.tags[i]
-      // 有图, 全部评价, 正常tag
-      if (tag.type === 'all') {
-        reqParams.hasPicture = null
-        reqParams.tag = null
-      } else if (tag.type === 'img') {
-        reqParams.hasPicture = true
-        reqParams.tag = null
-      } else {
-        reqParams.hasPicture = null
-        reqParams.tag = tag.title
-      }
+      //  
     }
     // 准备筛选条件数据
     const reqParams = reactive({
@@ -132,23 +120,7 @@ export default {
       // 排序方式：praiseCount 热度 createTime 最新
       sortField: null
     })
-
-    // 监听筛选条件的变化，重新请求数据
-    const commentList = ref([])
-    watch(
-      reqParams,
-      () => {
-        // 页码重置为1
-        reqParams.page = 1
-        // 重新请求数据
-        findGoodsCommentList(goods.id, reqParams).then(data => {
-          commentList.value = data.result.items
-          console.log(data.result.items)
-        })
-      },
-      { immediate: true }
-    )
-    return { commentInfo, currentTagIdx, reqParams, changeTag, commentList }
+    return { commentInfo, currentTagIdx, reqParams, changeTag }
   }
 }
 </script>

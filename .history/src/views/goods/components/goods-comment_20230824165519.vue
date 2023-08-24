@@ -136,7 +136,7 @@ export default {
     // 监听筛选条件的变化，重新请求数据
     const commentList = ref([])
     watch(
-      reqParams,
+      () => reqParams,
       () => {
         // 页码重置为1
         reqParams.page = 1

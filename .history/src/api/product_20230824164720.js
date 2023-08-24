@@ -43,8 +43,9 @@ export const findGoodsCommentInfo = id => {
 /**
  * 获取商品的评价列表
  * @param {String} id - 商品ID
- * @param {Object} params - 请求参数
  */
 export const findGoodsCommentList = (id, params) => {
-  return request(`/goods/${id}/evaluate/page`, 'get', params)
+  return request(`/goods/${id}/evaluate/`, 'get')
+  // axios遇上http/https开头的字符串，会自动忽略baseURL
+  // return request('https://mock.boxuegu.com/mock/1175/goods/${id}/evaluate', 'get')
 }

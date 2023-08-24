@@ -19,7 +19,7 @@
             v-for="(item, i) in commentInfo.tags"
             :key="item.title"
             href="javascript:;"
-            @click="changeTag(i)"
+            @click="currentTagIdx = i"
             :class="{ active: currentTagIdx === i }"
             >{{ item.title }}({{ item.tagCount }})</a
           >
@@ -28,33 +28,15 @@
     </div>
     <div class="sort">
       <span>排序：</span>
-      <a
-        @click="reqParams.sortField = null"
-        :class="{ active: reqParams.sortField === null }"
-        href="javascript:;"
-        >默认</a
-      >
-      <a
-        @click="reqParams.sortField = 'createTime'"
-        :class="{ active: reqParams.sortField === 'createTime' }"
-        href="javascript:;"
-        >最新</a
-      >
-      <a
-        @click="reqParams.sortField = 'praiseCount'"
-        :class="{ active: reqParams.sortField === 'praiseCount' }"
-        href="javascript:;"
-        >最热</a
-      >
+      <a href="javascript:;" class="active">默认</a>
+      <a href="javascript:;">最新</a>
+      <a href="javascript:;">最热</a>
     </div>
-    <!-- 列表 -->
+     <!-- 列表 -->
     <div class="list">
       <div class="item">
         <div class="user">
-          <img
-            src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/avatar_1.png"
-            alt=""
-          />
+          <img src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/avatar_1.png" alt="">
           <span>兔****m</span>
         </div>
         <div class="body">
@@ -66,12 +48,7 @@
             <i class="iconfont icon-wjx02"></i>
             <span class="attr">颜色：黑色 尺码：M</span>
           </div>
-          <div class="text">
-            网易云app上这款耳机非常不错 新人下载网易云购买这款耳机优惠大
-            而且耳机🎧确实正品 音质特别好 戴上这款耳机
-            听音乐看电影效果声音真是太棒了 无线方便 小盒自动充电
-            最主要是质量好音质棒 想要买耳机的放心拍 音效巴巴滴 老棒了
-          </div>
+          <div class="text">网易云app上这款耳机非常不错 新人下载网易云购买这款耳机优惠大 而且耳机🎧确实正品 音质特别好 戴上这款耳机 听音乐看电影效果声音真是太棒了 无线方便 小盒自动充电 最主要是质量好音质棒 想要买耳机的放心拍 音效巴巴滴 老棒了</div>
           <div class="time">
             <span>2020-10-10 10:11:22</span>
             <span class="zan"><i class="iconfont icon-dianzan"></i>100</span>
@@ -83,8 +60,8 @@
 </template>
 
 <script>
-import { findGoodsCommentInfo, findGoodsCommentList } from '@/api/product'
-import { inject, ref, reactive, watch } from 'vue'
+import { findGoodsCommentInfo } from '@/api/product'
+import { inject, ref } from 'vue'
 export default {
   name: 'GoodsComment',
   setup () {
@@ -95,60 +72,18 @@ export default {
       // 设置数据前，tags数组前追加有图tag，全部评价tag
       data.result.tags.unshift({
         title: '有图',
-        tagCount: data.result.hasPictureCount,
-        type: 'img'
+        tagCount: data.result.hasPictureCount
       })
       data.result.tags.unshift({
         title: '全部评价',
-        tagCount: data.result.evaluateCount,
-        type: 'all'
+        tagCount: data.result.evaluateCount
       })
       commentInfo.value = data.result
+      console.log(data.result)
     })
     // 选中标签
     const currentTagIdx = ref(0)
-    const changeTag = i => {
-      currentTagIdx.value = i
-      // 点击tag的时候修改筛选条件
-      const tag = commentInfo.value.tags[i]
-      // 有图, 全部评价, 正常tag
-      if (tag.type === 'all') {
-        reqParams.hasPicture = null
-        reqParams.tag = null
-      } else if (tag.type === 'img') {
-        reqParams.hasPicture = true
-        reqParams.tag = null
-      } else {
-        reqParams.hasPicture = null
-        reqParams.tag = tag.title
-      }
-    }
-    // 准备筛选条件数据
-    const reqParams = reactive({
-      page: 1,
-      pageSize: 10,
-      hasPicture: null,
-      tag: null,
-      // 排序方式：praiseCount 热度 createTime 最新
-      sortField: null
-    })
-
-    // 监听筛选条件的变化，重新请求数据
-    const commentList = ref([])
-    watch(
-      reqParams,
-      () => {
-        // 页码重置为1
-        reqParams.page = 1
-        // 重新请求数据
-        findGoodsCommentList(goods.id, reqParams).then(data => {
-          commentList.value = data.result.items
-          console.log(data.result.items)
-        })
-      },
-      { immediate: true }
-    )
-    return { commentInfo, currentTagIdx, reqParams, changeTag, commentList }
+    return { commentInfo, currentTagIdx }
   }
 }
 </script>
@@ -230,51 +165,6 @@ export default {
       &.active,
       &:hover {
         color: @xtxColor;
-      }
-    }
-  }
-  .list {
-    padding: 0 20px;
-    .item {
-      display: flex;
-      padding: 25px 10px;
-      border-bottom: 1px solid #f5f5f5;
-      .user {
-        width: 160px;
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          overflow: hidden;
-        }
-        span {
-          padding-left: 10px;
-          color: #666;
-        }
-      }
-      .body {
-        flex: 1;
-        .score {
-          line-height: 40px;
-          .iconfont {
-            color: #ff9240;
-            padding-right: 3px;
-          }
-          .attr {
-            padding-left: 10px;
-            color: #666;
-          }
-        }
-      }
-      .text {
-        color: #666;
-        line-height: 24px;
-      }
-      .time {
-        color: #999;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 5px;
       }
     }
   }

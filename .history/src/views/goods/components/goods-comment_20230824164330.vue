@@ -83,8 +83,8 @@
 </template>
 
 <script>
-import { findGoodsCommentInfo, findGoodsCommentList } from '@/api/product'
-import { inject, ref, reactive, watch } from 'vue'
+import { findGoodsCommentInfo } from '@/api/product'
+import { inject, ref, reactive } from 'vue'
 export default {
   name: 'GoodsComment',
   setup () {
@@ -134,21 +134,17 @@ export default {
     })
 
     // 监听筛选条件的变化，重新请求数据
-    const commentList = ref([])
     watch(
-      reqParams,
+      () => reqParams,
       () => {
-        // 页码重置为1
-        reqParams.page = 1
         // 重新请求数据
-        findGoodsCommentList(goods.id, reqParams).then(data => {
-          commentList.value = data.result.items
-          console.log(data.result.items)
+        findGoodsCommentInfo(goods.value.id, reqParams).then(data => {
+          commentInfo.value = data.result
         })
       },
-      { immediate: true }
+      { deep: true }
     )
-    return { commentInfo, currentTagIdx, reqParams, changeTag, commentList }
+    return { commentInfo, currentTagIdx, reqParams, changeTag }
   }
 }
 </script>

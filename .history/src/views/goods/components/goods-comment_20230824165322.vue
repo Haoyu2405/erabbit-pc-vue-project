@@ -136,19 +136,19 @@ export default {
     // 监听筛选条件的变化，重新请求数据
     const commentList = ref([])
     watch(
-      reqParams,
+      () => reqParams,
       () => {
         // 页码重置为1
         reqParams.page = 1
         // 重新请求数据
-        findGoodsCommentList(goods.id, reqParams).then(data => {
+       findGoodsCommentList(goods.value.id, reqParams).then(data => {
           commentList.value = data.result.items
-          console.log(data.result.items)
+          console.log(data.result.items);
         })
       },
       { immediate: true }
     )
-    return { commentInfo, currentTagIdx, reqParams, changeTag, commentList }
+    return { commentInfo, currentTagIdx, reqParams, changeTag }
   }
 }
 </script>
