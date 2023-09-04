@@ -72,10 +72,7 @@
             {{ item.content }}
           </div>
           <!-- 评论图片组件 -->
-          <GoodsCommentImage
-            v-if="item.pictures.length"
-            :picture="item.pictures"
-          />
+          <GoodsCommentImage v-if="item.pict" />
           <div class="time">
             <span>{{ item.createTime }}</span>
             <span class="zan"

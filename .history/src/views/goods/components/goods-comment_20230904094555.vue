@@ -73,9 +73,6 @@
           </div>
           <!-- 评论图片组件 -->
           <GoodsCommentImage
-            v-if="item.pictures.length"
-            :picture="item.pictures"
-          />
           <div class="time">
             <span>{{ item.createTime }}</span>
             <span class="zan"

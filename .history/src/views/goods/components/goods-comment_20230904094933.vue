@@ -73,7 +73,7 @@
           </div>
           <!-- 评论图片组件 -->
           <GoodsCommentImage
-            v-if="item.pictures.length"
+            v-if="item.picture.length"
             :picture="item.pictures"
           />
           <div class="time">

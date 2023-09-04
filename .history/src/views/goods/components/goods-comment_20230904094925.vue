@@ -73,8 +73,8 @@
           </div>
           <!-- 评论图片组件 -->
           <GoodsCommentImage
-            v-if="item.pictures.length"
-            :picture="item.pictures"
+            v-if="item.picture.length"
+            :picture="item.picture"
           />
           <div class="time">
             <span>{{ item.createTime }}</span>

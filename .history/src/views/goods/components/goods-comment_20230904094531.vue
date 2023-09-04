@@ -72,10 +72,6 @@
             {{ item.content }}
           </div>
           <!-- 评论图片组件 -->
-          <GoodsCommentImage
-            v-if="item.pictures.length"
-            :picture="item.pictures"
-          />
           <div class="time">
             <span>{{ item.createTime }}</span>
             <span class="zan"
@@ -94,8 +90,8 @@ import GoodsCommentImage from './goods-comment-image.vue'
 import { inject, ref, reactive, watch } from 'vue'
 export default {
   name: 'GoodsComment',
-  components: {
-    GoodsCommentImage
+  components:{
+    
   },
   setup () {
     // 评论信息
