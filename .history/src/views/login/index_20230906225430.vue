@@ -21,8 +21,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
-.login-section {
+<style scoped lang="less">.login-section {
   background: url(../../assets/images/login-bg.png) no-repeat center / cover;
   height: 488px;
   position: relative;
@@ -33,15 +32,15 @@ export default {
     position: absolute;
     left: 50%;
     top: 54px;
-    transform: translate3d(100px, 0, 0);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transform: translate3d(100px,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
     nav {
       height: 55px;
       border-bottom: 1px solid #f5f5f5;
       display: flex;
       padding: 0 40px;
       text-align: right;
-      align-items: center;
+      align-items: center;  
       a {
         flex: 1;
         line-height: 1;
@@ -52,12 +51,11 @@ export default {
           border-right: 1px solid #f5f5f5;
           text-align: left;
         }
-        &.active {
+        &.active{
           color: @xtxColor;
           font-weight: bold;
         }
       }
     }
   }
-}
-</style>
+}</style>
