@@ -17,13 +17,7 @@ module.exports = defineConfig({
           }
         ]
       }
-    ],
-      config.plugin('code-inspector').use(CodeInspectorPlugin, [
-        {
-          bundler: 'webpack',
-          showSwitch: true
-        }
-      ])
+    ]
   },
   pluginOptions: {
     'style-resources-loader': {
@@ -34,10 +28,15 @@ module.exports = defineConfig({
         path.join(__dirname, './src/assets/styles/variables.less'),
         path.join(__dirname, './src/assets/styles/mixins.less')
       ]
+    },
+    'code-inspector-plugin': {
+      // 代码检查插件配置
+      bundle: 'webpack'
     }
   },
   // 通过反向代理解决开发时前端跨域问题
   devServer: {
+    before: openCodeServe.before,
     proxy: {
       '/api': {
         target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',

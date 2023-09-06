@@ -22,6 +22,7 @@ module.exports = defineConfig({
         {
           bundler: 'webpack',
           showSwitch: true
+
         }
       ])
   },

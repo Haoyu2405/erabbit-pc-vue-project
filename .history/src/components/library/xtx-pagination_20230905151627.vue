@@ -52,7 +52,7 @@ export default {
     // 1.约定按钮的个数5个，如果成为动态的需要设置响应式数据
     const count = 5
     // 2.当前页码
-    const myCurrentPage = ref(1)
+    const myCurrentPage = ref(9)
     // 3.总页数 = 总条数myTotal / 每页条数myPageSize 向上取整
     const myTotal = ref(100)
     const myPageSize = ref(10)
@@ -103,7 +103,7 @@ export default {
         myTotal.value = props.total
         myPageSize.value = props.pageSize
         myCurrentPage.value = props.currentPage
-        // console.log('改变了')
+        console.log('改变了')？
       },
       {
         immediate: true

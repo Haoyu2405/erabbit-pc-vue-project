@@ -1,5 +1,5 @@
 const path = require('path')
-const { CodeInspectorPlugin } = require('code-inspector-plugin')
+const openCodeServe = require('@vivo/vue-dev-code-link/server')
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -17,13 +17,7 @@ module.exports = defineConfig({
           }
         ]
       }
-    ],
-      config.plugin('code-inspector').use(CodeInspectorPlugin, [
-        {
-          bundler: 'webpack',
-          showSwitch: true
-        }
-      ])
+    ]
   },
   pluginOptions: {
     'style-resources-loader': {
@@ -38,6 +32,7 @@ module.exports = defineConfig({
   },
   // 通过反向代理解决开发时前端跨域问题
   devServer: {
+    before: openCodeServe,
     proxy: {
       '/api': {
         target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',

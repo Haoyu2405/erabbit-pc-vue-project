@@ -1,5 +1,5 @@
 const path = require('path')
-const { CodeInspectorPlugin } = require('code-inspector-plugin')
+const openCodeServe = require('@vivo/vue-dev-code-link/server')
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -17,13 +17,7 @@ module.exports = defineConfig({
           }
         ]
       }
-    ],
-      config.plugin('code-inspector').use(CodeInspectorPlugin, [
-        {
-          bundler: 'webpack',
-          showSwitch: true
-        }
-      ])
+    ]
   },
   pluginOptions: {
     'style-resources-loader': {

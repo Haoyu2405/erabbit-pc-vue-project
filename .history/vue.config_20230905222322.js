@@ -1,5 +1,5 @@
 const path = require('path')
-const { CodeInspectorPlugin } = require('code-inspector-plugin')
+const openCodeServe = require('@vivo/vue-dev-code-link/server')
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -17,13 +17,7 @@ module.exports = defineConfig({
           }
         ]
       }
-    ],
-      config.plugin('code-inspector').use(CodeInspectorPlugin, [
-        {
-          bundler: 'webpack',
-          showSwitch: true
-        }
-      ])
+    ]
   },
   pluginOptions: {
     'style-resources-loader': {
@@ -38,6 +32,7 @@ module.exports = defineConfig({
   },
   // 通过反向代理解决开发时前端跨域问题
   devServer: {
+    before: openCodeServe.before,
     proxy: {
       '/api': {
         target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
@@ -48,4 +43,16 @@ module.exports = defineConfig({
       }
     }
   }
+
+  if (!isProd) { // 本地开发环境
+  config.module
+    .rule('vue')
+    .test(/\.vue/)
+    .use('@vivo/vue-dev-code-link/add-location-loader')
+    .loader('@vivo/vue-dev-code-link/add-location-loader')
+    .end()
+}
+————————————————
+版权声明：本文为CSDN博主「测试界的飘柔」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/m0_67695717/article/details/125619195
 })

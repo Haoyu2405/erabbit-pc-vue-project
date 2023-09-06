@@ -20,8 +20,7 @@ module.exports = defineConfig({
     ],
       config.plugin('code-inspector').use(CodeInspectorPlugin, [
         {
-          bundler: 'webpack',
-          showSwitch: true
+          bundler: 'webpack'
         }
       ])
   },
