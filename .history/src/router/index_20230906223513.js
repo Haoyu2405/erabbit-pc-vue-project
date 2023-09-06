@@ -42,7 +42,7 @@ const routes = [
   {
     path: '/login',
     component: Login
-  }
+    
 ]
 
 // vue2.0 new VueRouter({}) 创建路由实例

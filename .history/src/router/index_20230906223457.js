@@ -38,10 +38,6 @@ const routes = [
         component: Goods
       }
     ]
-  },
-  {
-    path: '/login',
-    component: Login
   }
 ]
 
