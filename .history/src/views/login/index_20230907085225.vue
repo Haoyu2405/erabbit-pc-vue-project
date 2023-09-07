@@ -11,7 +11,7 @@
         >
         <a
           @click="activeName = 'qrcode'"
-          :class="{ active: activeName === 'qrcode' }"
+          :class="{ active: (activeName = 'qrcode') }"
           href="javascript:;"
           >扫码登录</a
         >

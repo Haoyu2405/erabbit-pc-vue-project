@@ -3,18 +3,8 @@
   <section class="login-section">
     <div class="wrapper">
       <nav>
-        <a
-          @click="activeName = 'account'"
-          :class="{ active: activeName === 'account' }"
-          href="javascript:;"
-          >账户登录</a
-        >
-        <a
-          @click="activeName = 'qrcode'"
-          :class="{ active: activeName === 'qrcode' }"
-          href="javascript:;"
-          >扫码登录</a
-        >
+        <a @click="activeName='account'" :class="{active:active}" href="javascript:;">账户登录</a>
+        <a @click="activeName='qrcode'" href="javascript:;">扫码登录</a>
       </nav>
       <!-- 表单 -->
       <div v-if="activeName === 'account'" class="account-box">表单</div>

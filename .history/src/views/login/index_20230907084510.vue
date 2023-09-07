@@ -3,18 +3,8 @@
   <section class="login-section">
     <div class="wrapper">
       <nav>
-        <a
-          @click="activeName = 'account'"
-          :class="{ active: activeName === 'account' }"
-          href="javascript:;"
-          >账户登录</a
-        >
-        <a
-          @click="activeName = 'qrcode'"
-          :class="{ active: activeName === 'qrcode' }"
-          href="javascript:;"
-          >扫码登录</a
-        >
+        <a href="javascript:;">账户登录</a>
+        <a href="javascript:;">扫码登录</a>
       </nav>
       <!-- 表单 -->
       <div v-if="activeName === 'account'" class="account-box">表单</div>
@@ -28,7 +18,6 @@
   <LoginFooter />
 </template>
 <script>
-import { ref } from 'vue'
 import LoginHeader from './components/login-header'
 import LoginFooter from './components/login-footer'
 export default {
@@ -37,9 +26,8 @@ export default {
     LoginHeader,
     LoginFooter
   },
-  setup () {
-    const activeName = ref('account')
-    return { activeName }
+  setup(){
+    
   }
 }
 </script>

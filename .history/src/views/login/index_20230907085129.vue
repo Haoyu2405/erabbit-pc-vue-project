@@ -5,13 +5,13 @@
       <nav>
         <a
           @click="activeName = 'account'"
-          :class="{ active: activeName === 'account' }"
+          :class="{ active: (activeName = 'account') }"
           href="javascript:;"
           >账户登录</a
         >
         <a
           @click="activeName = 'qrcode'"
-          :class="{ active: activeName === 'qrcode' }"
+          :class="{ active: (activeName = 'qrcode') }"
           href="javascript:;"
           >扫码登录</a
         >
