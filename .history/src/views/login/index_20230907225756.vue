@@ -17,7 +17,7 @@
         >
       </nav>
       <!-- 表单 -->
-      <LoginForm v-if="activeName === 'account'">表单</LoginForm>
+      <L v-if="activeName === 'account'" class="account-box">表单</L>
       <!-- 二维码 -->
       <div v-if="activeName === 'qrcode'" class="qrcode-box">
         <img src="@/assets/images/qrcode.jpg" alt="" />

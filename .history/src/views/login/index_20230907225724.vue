@@ -17,7 +17,7 @@
         >
       </nav>
       <!-- 表单 -->
-      <LoginForm v-if="activeName === 'account'">表单</LoginForm>
+      <div v-if="activeName === 'account'" class="account-box">表单</div>
       <!-- 二维码 -->
       <div v-if="activeName === 'qrcode'" class="qrcode-box">
         <img src="@/assets/images/qrcode.jpg" alt="" />
@@ -36,8 +36,7 @@ export default {
   name: 'PageLogin',
   components: {
     LoginHeader,
-    LoginFooter,
-    LoginForm
+    LoginFooter
   },
   setup () {
     const activeName = ref('account')
