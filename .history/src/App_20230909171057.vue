@@ -2,7 +2,7 @@
   <!-- 一级路由 -->
   <RouterView />
   <!-- 测试 -->
-  <XtxMessage type="success" text="登录成功！"/>
+  <XtxMessage type="success" text="登陆成功"/>
 </template>
 
 <script>
