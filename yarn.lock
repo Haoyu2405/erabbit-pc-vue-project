@@ -6796,6 +6796,11 @@ vary@~1.1.2:
   resolved "https://registry.npmmirror.com/vary/-/vary-1.1.2.tgz"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
+vee-validate@^4.0.3:
+  version "4.0.3"
+  resolved "https://mirrors.cloud.tencent.com/npm/vee-validate/-/vee-validate-4.0.3.tgz"
+  integrity sha512-Ovk5+rNCnwZDQuRcCcq8claqJNNerBauKzCBD3bDoGBWqoLwAfo7rakr4p/jJs5WB4qpCyxjuycZMZJhuUNA/g==
+
 vite-code-inspector-plugin@0.1.11:
   version "0.1.11"
   resolved "https://mirrors.cloud.tencent.com/npm/vite-code-inspector-plugin/-/vite-code-inspector-plugin-0.1.11.tgz"
@@ -6860,7 +6865,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmmirror.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@*, "vue@^2 || ^3.2.13", "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.13, vue@3.3.1:
+vue@*, "vue@^2 || ^3.2.13", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.13, vue@3.3.1:
   version "3.3.1"
   resolved "https://registry.npmmirror.com/vue/-/vue-3.3.1.tgz"
   integrity sha512-3Rwy4I5idbPVSDZu6I+fFh6tdDSZbauImCTqLxE7y0LpHtiDvPeY01OI7RkFPbva1nk4hoO0sv/NzosH2h60sg==
