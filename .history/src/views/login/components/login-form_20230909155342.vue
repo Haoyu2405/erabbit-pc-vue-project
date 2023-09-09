@@ -11,7 +11,7 @@
     <Form
       class="form"
       ref="formComponent"
-      :validation-schema="mySchema"
+      :validation-schema="schema"
       v-slot="{ errors }"
     >
       <template v-if="!isMsgLogin">
